@@ -47,7 +47,7 @@ const user = {
       name: 'about',
       title: 'About',
       type: 'text',
-      description: 'A brief dsecription about the user',
+      description: 'A brief description about the user',
     }),
   ],
 };

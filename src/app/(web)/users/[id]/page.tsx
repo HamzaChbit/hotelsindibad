@@ -100,7 +100,7 @@ const UserDetails = (props:{params:{id:string}}) => {
     if (!userData) throw new Error('Cannot fetch data');
 
   return (
-    <div className='container mx-auto px-2 md:px-4 py-10 my-20'>
+    <div className='container mx-auto px-2 md:px-4 py-10 mt-20'>
      <div className='grid md:grid-cols-12 gap-10'>
      <div className='hidden md:block md:col-span-4 lg:col-span-3 shadow-lg h-fit sticky top-10 bg-[#eff0f2] text-black rounded-lg px-6 py-4'>
      <div className='md:w-[143px] w-28 h-28 md:h-[143px] mx-auto mb-5 rounded-full overflow-hidden'>

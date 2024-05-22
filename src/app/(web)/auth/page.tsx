@@ -54,6 +54,7 @@ const Auth = () => {
           const user = await signUp(formData);
           if (user) {
             toast.success('Success. Please sign in');
+            
           }
        
           } catch (error) {

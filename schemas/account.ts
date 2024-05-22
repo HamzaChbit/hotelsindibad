@@ -8,32 +8,38 @@ const account = {
     defineField({
       name: 'providerType',
       type: 'string',
+      title: 'Provider Type',
     }),
     defineField({
       name: 'providerId',
       type: 'string',
+      title: 'Provider ID',
     }),
     defineField({
       name: 'providerAccountId',
       type: 'string',
+      title: 'Provider Account ID',
     }),
     defineField({
       name: 'refreshToken',
       type: 'string',
+      title: 'Refresh Token',
     }),
     defineField({
       name: 'accessToken',
       type: 'string',
+      title: 'Access Token',
     }),
     defineField({
       name: 'accessTokenExpires',
       type: 'number',
+      title: 'Access Token Expires',
     }),
     defineField({
       name: 'user',
-      title: 'user',
+      title: 'User',
       type: 'reference',
-      to: { type: 'user' },
+      to: [{ type: 'user' }],
     }),
   ],
 };
