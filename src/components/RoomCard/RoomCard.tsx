@@ -12,15 +12,15 @@ type Props = {
     } = props;
   
     return (
-      <div className='rounded-xl w-72 mb-10 mx-auto md:mx-0 overflow-hidden text-black border-2 border-tertiary-dark'>
-        <div className='h-60 cursor-pointer overflow-hidden'>
+      <div className='rounded-xl w-72 mb-10 mx-auto md:mx-0 overflow-hidden text-black border-2 border-tertiary-dark p-2'  >
+        <div className='h-60 cursor-pointer overflow-hidden '>
                <Link href={`/rooms/${slug.current}`} >  
                 <Image
             src={coverImage.url}
             alt={name}
             width={250}
             height={250}
-            className='img scale-animation'
+            className='img scale-animation rounded-sm'
           />
         </Link>
         </div>

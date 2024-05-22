@@ -1,13 +1,17 @@
+
 import Link from "next/link";
 
 
 const NewsLetter = () => {
+
+ 
     return (
     
        <section>
   <div className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
     <div className="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
-      <div className="relative z-20 lg:py-16">
+      <div className="relative z-20 lg:py-16"  data-aos="fade-up"
+     >
         <div className="relative h-64 sm:h-80 lg:h-full">
           <img
             alt="hotel"
@@ -18,12 +22,13 @@ const NewsLetter = () => {
         </div>
       </div>
 
-      <div className="relative flex  bg-gray-100">
+      <div className="relative flex  bg-gray-100"
+    >
         <span
           className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"
         ></span>
 
-        <div className="p-8 sm:p-16 lg:p-24 flex justify-evenly flex-col" >
+        <div className="p-8 sm:p-16 lg:p-24 flex justify-evenly flex-col " data-aos="fade-up">
           <div>
                 <h2 className="text-3xl font-bold sm:text-3xl tracking-wide ">
           <span  className="text-tertiary-dark border-b-2 border-black">HOTEL</span> RIAD SALAM AGADIR          </h2>

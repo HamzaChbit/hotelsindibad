@@ -42,8 +42,7 @@ export default function RootLayout({
       <Toast />
   
 
-    <main className='font-normal w-full h-screen hover:scrollbar-thumb-sky-500 active:scrollbar-thumb-sky-400  scrollbar scrollbar-thumb-tertiary-dark scrollbar-track-white overflow-y-scroll
-
+    <main className='font-normal 
 
  '>
       

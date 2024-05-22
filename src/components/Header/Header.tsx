@@ -1,18 +1,21 @@
 'use client';
-import ThemeContext from '@/context/themeContext';
+
+
+
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link'
-import React, { useContext } from 'react'
 import { FaUserCircle } from 'react-icons/fa';
-import ScrollToTop from "react-scroll-to-top";
+
+
+
 
 
 const Header = () => {
 
-  const { darkTheme, setDarkTheme } = useContext(ThemeContext);
+  
 
-
+ 
   const { data: session } = useSession();
 
 
@@ -23,7 +26,7 @@ const Header = () => {
 
 
 
-    <header className='py-2 px-4  text-xl  w-full  fixed top-0 bg-black bg-opacity-20  z-30 mb-5'>
+    <header className='py-2 px-4  text-xl  w-full  fixed top-0 bg-black bg-opacity-20  z-30 mb-5 '>
       
       <div className='container mx-auto flex flex-wrap md:flex-nowrap items-center justify-between'>
 
@@ -62,14 +65,15 @@ const Header = () => {
 
         <ul  className='flex items-center justify-between w-full md:w-1/3  mt-4 text-white font-semibold' >
         <li className='hover:-translate-y-2 duration-500 transition-all hover:text-tertiary-dark   px-2'>
-        <Link href='/'>Home</Link>
+        <Link href="/">Home</Link>
           </li>
           <li className='hover:-translate-y-2 duration-500 transition-all px-2 hover:text-tertiary-dark'>
-          <Link href='/rooms'>Rooms</Link>
+          <Link href="/rooms">Rooms</Link>
         </li>
         <li className='hover:-translate-y-2 duration-500 transition-all px-2 hover:text-tertiary-dark'>
-          <Link href='/contact'>Contact</Link>
+          <Link href="/contact">Contact</Link>
         </li>
+      
         </ul>
 
       </div>

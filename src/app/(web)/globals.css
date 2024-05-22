@@ -25,3 +25,10 @@
 .font-normal {
   @apply text-sm md:text-base;
 }
+
+.main-content {
+  /* Add your existing styles here */
+  position: relative; /* Ensure that it doesn't interfere with absolute positioning of ScrollToTop */
+  z-index: 1; /* Ensure it's above any other elements that might obscure the ScrollToTop */
+}
+

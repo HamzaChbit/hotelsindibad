@@ -9,6 +9,8 @@ import PageSearch from "@/components/PageSearch/PageSearch";
 import { getFeaturedRoom } from "@/libs/apis";
 
 
+
+
 export default  async function Home() {
   const featuredRoom = await getFeaturedRoom()
 
@@ -17,7 +19,7 @@ export default  async function Home() {
     <>
 
 <div className=" py-10  bg-custom bg-no-repeat bg-cover bg-center mb-5  " >
-       
+
        <HeroSection />
        <PageSearch /> 
        </div>

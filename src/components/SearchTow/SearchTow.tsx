@@ -30,8 +30,8 @@ const handleFilterClick = () => {
 
 
   return (
-    <section  className=' mt-20 rounded-lg mb-5  ' >
-        <div className='container mx-auto flex gap-4 flex-wrap justify-between items-center   px-10 py-8 rounded-lg border-2 border-tertiary-dark ' >
+    <section  className=' mt-20 rounded-lg mb-5 w-[80%]  ' >
+        <div className='flex gap-4 flex-wrap justify-between items-center   md:px-10 px-2  py-8 rounded-lg border-2 border-tertiary-dark ' >
             <div className='w-full md:1/3 lg:w-auto mb-4 md:mb-0' >
             <label className='block text-xl font-medium mb-2 text-dark'>
             Room Type :
@@ -42,10 +42,10 @@ const handleFilterClick = () => {
            onChange={handleRoomTypeChange}
               className='w-full px-8 py-4  capitalize rounded leading-tight dark:bg-black border-2 border-tertiary-dark focus:outline-none '
             >
-              <option value='All'>All</option>
-              <option value='Basic'>Basic</option>
-              <option value='Luxury'>Luxury</option>
-              <option value='Suite'>Suite</option>
+             <option value='All'>All</option>
+              <option value='Single room'>Single room</option>
+              <option value='Double room'>Double room</option>
+              <option value='Triple room'>Triple room</option>
             </select>
           </div>
             </div>
