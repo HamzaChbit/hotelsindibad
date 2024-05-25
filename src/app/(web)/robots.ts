@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       
     },
   ],
-    sitemap: 'https://hotel-management-iota.vercel.app/sitemap.xml',
+    sitemap: 'https://hotelriadsalam.vercel.app/sitemap.xml',
   }
 }

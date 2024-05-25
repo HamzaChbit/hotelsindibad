@@ -13,8 +13,9 @@ import Footer from "@/components/Footer/Footer";
 
 
 export const metadata: Metadata = {
-  title: 'Hotel Management App',
-  description: 'Discover the best hotel rooms',
+  title: 'Hôtel Riad Salam Agadir',
+  description: 'Amazighe Heritage Museum is 2.5 km from the accommodation, while Medina Polizzi is 2.9 km from the property. The nearest airport is Agadir–Al Massira Airport, 19 km from Hôtel Riad Salam Agadir.',
+  keywords:["Hôtel Riad Salam Agadir","Riad Salam","Hôtel Riad Salam","Agadir","best hotel","hotel","Hotel"],
 };
 const poppins = Poppins({
   subsets: ['latin'],
