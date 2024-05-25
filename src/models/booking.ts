@@ -13,5 +13,8 @@ export type Booking = {
     children: number;
     telephone: string;
     totalPrice: number;
+    email:string;
     discount: number;
+    user:string;
+    userId:string;
   };

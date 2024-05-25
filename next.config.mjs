@@ -1,9 +1,10 @@
-// next.config.mjs
 const nextConfig = {
   images: {
     domains: [
       'lh3.googleusercontent.com',
-      'unsplash.com','images.unsplash.com','plus.unsplash.com'
+      'img.clerk.com',
+      'cf.bstatic.com',
+      'cdn.sanity.io'
     ],
   },
 };

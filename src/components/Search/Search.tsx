@@ -43,10 +43,10 @@ const handleFilterClick = () => {
               className='w-full px-8 py-4  capitalize rounded leading-tight dark:bg-black focus:outline-none'
             >
               <option value='All'>All</option>
-              <option value='Single room'>Single room</option>
-              <option value='Double room'>Double room</option>
-              <option value='Triple room'>Triple room</option>
-            </select>
+              <option value='twin room with bathroom'>Twin Room with Bathroom</option>
+              <option value='superior double room'>Superior Double Room</option>
+              <option value='comfort triple room'>Comfort Triple Room</option>  
+               <option value='suite with balcony'>Suite with Balcony</option>         </select>
           </div>
             </div>
             <div className='w-full md:1/3 lg:w-auto mb-4 md:mb-0'>

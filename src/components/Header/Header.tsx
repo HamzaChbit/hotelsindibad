@@ -2,7 +2,7 @@
 
 
 
-import { useSession } from 'next-auth/react';
+import { useUser } from '@clerk/nextjs';
 import Image from 'next/image';
 import Link from 'next/link'
 import { FaUserCircle } from 'react-icons/fa';
@@ -16,9 +16,11 @@ const Header = () => {
   
 
  
-  const { data: session } = useSession();
+ 
 
-
+  const { user } = useUser();
+  const userId = user?.id;
+  
 
   return (
 
@@ -36,13 +38,13 @@ const Header = () => {
       </Link>
       <ul className='flex items-center ml-5' >
       <li className='flex items-center' >
-      {session?.user ? (
-              <Link href={`/users/${session.user.id}`}>
-                {session.user.image ? (
+      {userId ? (
+              <Link href={`/users/${userId}`}>
+                {user.imageUrl ? (
                   <div className='w-10 h-10 rounded-full overflow-hidden'>
                     <Image
-                      src={session.user.image}
-                      alt={session.user.name!}
+                        src={user.imageUrl}
+                      alt={user?.username || "user"}
                       width={30}
                       height={30}
                       className='scale-animation img'
@@ -53,7 +55,7 @@ const Header = () => {
                 )}
               </Link>
             ) : (
-              <Link href='/auth'>
+              <Link href='/sign-in'>
                 <FaUserCircle className='cursor-pointer ' color='white' />
               </Link>
             )}

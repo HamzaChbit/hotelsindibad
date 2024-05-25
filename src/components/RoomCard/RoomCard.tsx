@@ -11,12 +11,14 @@ type Props = {
       room: { coverImage, name, price, type, description, slug, isBooked },
     } = props;
   
+
     return (
-      <div className='rounded-xl w-72 mb-10 mx-auto md:mx-0 overflow-hidden text-black border-2 border-tertiary-dark p-2'  >
+      
+  <div className='rounded-xl w-72 mb-10 mx-auto md:mx-0 overflow-hidden text-black border-2 border-tertiary-dark p-2'  >
         <div className='h-60 cursor-pointer overflow-hidden '>
                <Link href={`/rooms/${slug.current}`} >  
                 <Image
-            src={coverImage.url}
+            src={coverImage}
             alt={name}
             width={250}
             height={250}
@@ -27,10 +29,11 @@ type Props = {
      
        
   
-        <div className='p-4 bg-white'>
-          <div className='flex justify-between text-xl font-semibold'>
+        <div className='p-2 bg-white '>
+          <div className=' text-xl font-semibold'>
             <p>{name}</p>
-            <p>$ {price}</p>
+           <p>$ {price}</p>
+      
           </div>
   
           <p className='pt-2 text-xs'>{type} Room</p>
@@ -45,6 +48,8 @@ type Props = {
           </Link>
         </div>
       </div>
+
+    
     );
   };
   

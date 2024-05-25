@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^5.1.0",
     "@emailjs/browser": "^4.3.3",
     "@sanity/vision": "^3.36.4",
     "@tailwindcss/forms": "^0.5.7",

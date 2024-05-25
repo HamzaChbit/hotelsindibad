@@ -5,12 +5,23 @@ const booking = {
   title: 'Booking',
   type: 'document',
   fields: [
-    defineField({
-      name: 'user',
-      title: 'User',
-      type: 'reference',
-      to: [{ type: 'user' }],
-      validation: Rule => Rule.required(),
+    defineField(  {
+      name: "email",
+      title: "Email",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField(  {
+      name: "user",
+      title: "User",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField(  {
+      name: "userId",
+      title: "UserId",
+      type: "string",
+      
     }),
     defineField({
       name: 'telephone',

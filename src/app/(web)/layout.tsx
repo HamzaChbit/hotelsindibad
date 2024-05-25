@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Poppins } from 'next/font/google';
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
+
+import { ClerkProvider } from "@clerk/nextjs";
+import 'aos/dist/aos.css';
 import ThemeProvider from "@/components/ThemeProvider/ThemeProvider";
 import Toast from "@/components/Tosat/Toast";
-import { NextAuthProvider } from "@/components/AuthProvider/AuthProvider";
-import 'aos/dist/aos.css';
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
+
 
 
 export const metadata: Metadata = {
@@ -25,7 +27,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+  return (  
+     <ClerkProvider>
     <html lang="en" >
        <head>
         <link
@@ -37,7 +40,7 @@ export default function RootLayout({
       <body className={poppins.className}>
    
         
-      <NextAuthProvider>
+   
       <ThemeProvider>
       <Toast />
   
@@ -56,8 +59,9 @@ export default function RootLayout({
      
    
         </ThemeProvider>
-        </NextAuthProvider>
+       
         </body>
-    </html>
+    </html> 
+    </ClerkProvider>
   );
 }

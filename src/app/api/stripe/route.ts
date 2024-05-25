@@ -1,10 +1,9 @@
 
-
-import { authOptions } from '@/libs/auth';
 import { getServerSession } from 'next-auth';
 import { NextResponse } from 'next/server';
-import { createBooking, getRoom } from '@/libs/apis';
 
+import { useUser } from '@clerk/nextjs';
+import { createBooking, getRoom } from '@/libs/apis';
 
 
 type RequestData = {
@@ -12,9 +11,12 @@ type RequestData = {
   checkoutDate: string;
   adults: number;
   children: number;
-  telephone:string;
+  telephone: string;
   numberOfDays: number;
   hotelRoomSlug: string;
+  email:string;
+  user:string;
+  userId:string;
 };
 
 export async function POST(req: Request, res: Response) {
@@ -24,31 +26,27 @@ export async function POST(req: Request, res: Response) {
     checkoutDate,
     children,
     hotelRoomSlug,
-   
     telephone,
     numberOfDays,
+    email,
+    user,
+    userId,
   }: RequestData = await req.json();
 
   if (
     !checkinDate ||
     !checkoutDate ||
     !adults ||
-    !telephone||
+    !telephone ||
     !hotelRoomSlug ||
     !numberOfDays
   ) {
-    return new NextResponse('Please all fields are required', { status: 400 });
+    return new NextResponse('Please fill all fields', { status: 400 });
   }
 
-  const origin = req.headers.get('origin');
 
-  const session = await getServerSession(authOptions);
 
-  if (!session) {
-    return new NextResponse('Authentication required', { status: 400 });
-  }
-
-  const userId = session.user.id;
+  
   const formattedCheckoutDate = checkoutDate.split('T')[0];
   const formattedCheckinDate = checkinDate.split('T')[0];
 
@@ -57,26 +55,27 @@ export async function POST(req: Request, res: Response) {
     const discountPrice = room.price - (room.price / 100) * room.discount;
     const totalPrice = discountPrice * numberOfDays;
 
-   const stripeSession=  await createBooking({
-         adults,
-        checkinDate: formattedCheckinDate,
-        checkoutDate: formattedCheckoutDate,
-        children,
-        hotelRoom: room._id,
-        numberOfDays,
-        telephone,
-        user: userId,
-        discount: room.discount,
-        totalPrice
-      });
-
+    const stripeSession = await createBooking({
+      adults,
+      checkinDate: formattedCheckinDate,
+      checkoutDate: formattedCheckoutDate,
+      children,
+      hotelRoom: room._id,
+      numberOfDays,
+      telephone,
+      email,
+      user,
+      discount: room.discount,
+      totalPrice,
+      userId,
+    });
 
     return NextResponse.json(stripeSession, {
       status: 200,
       statusText: 'Payment session created',
     });
   } catch (error: any) {
-    console.log('Payment falied', error);
-    return new NextResponse(error, { status: 500 });
+    console.log('Payment failed', error);
+    return new NextResponse('Internal Server Error', { status: 500 });
   }
 }

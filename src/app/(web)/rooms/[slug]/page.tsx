@@ -1,17 +1,21 @@
 "use client"
 import { useState } from "react";
-import {  createBooking, getRoom, updateHotelRoom } from "@/libs/apis";
+
 import useSWR from "swr";
 import LoadingSpinner from "../../loading";
-import HotelPhotoGallery from "@/components/HotelPhotoGallery/HotelPhotoGallery";
+
 import { LiaFireExtinguisherSolid } from "react-icons/lia";
-import { MdOutlineCleaningServices } from "react-icons/md";
+import { MdOutlineBathroom, MdOutlineCleaningServices } from "react-icons/md";
 import { AiOutlineMedicineBox } from "react-icons/ai";
 import { GiSmokeBomb } from "react-icons/gi";
-import BookRoomCta from "@/components/BookRoomCta/BookRoomCta";
+import { TbAirConditioning } from "react-icons/tb";
 import toast from "react-hot-toast";
 import axios from "axios";
-import RoomReview from "@/components/RoomReview/RoomReview";
+import { IoTvSharp } from "react-icons/io5";
+import { useUser } from "@clerk/nextjs";
+import { getRoom } from "@/libs/apis";
+import BookRoomCta from "@/components/BookRoomCta/BookRoomCta";
+import HotelPhotoGallery from "@/components/HotelPhotoGallery/HotelPhotoGallery";
 
 
 
@@ -36,9 +40,11 @@ const RoomDetails = (props:{ params: { slug: string } }) => {
       
       const [noOfChildren, setNoOfChildren] = useState(0);
      
+  const { user } = useUser();
  
-
-
+ 
+const userId= user?.fullName
+  const email = user?.emailAddresses[0]?.emailAddress;
 
 
       if (typeof room === 'undefined' && !isLoading)
@@ -55,7 +61,7 @@ const RoomDetails = (props:{ params: { slug: string } }) => {
        return null
       };
   
-    
+     
       const handleBookNowClick = async () => {
         if (!checkinDate || !checkoutDate)
           return toast.error('Please provide checkin / checkout date');
@@ -82,6 +88,9 @@ const RoomDetails = (props:{ params: { slug: string } }) => {
             numberOfDays,
             telephone,
             hotelRoomSlug,
+            email:email,
+            user:userId,
+            userId:user?.id
           });
           toast.success('An success');
         
@@ -107,8 +116,8 @@ const RoomDetails = (props:{ params: { slug: string } }) => {
     <div className='md:grid md:grid-cols-12 gap-10 px-3'>
     <div className='md:col-span-8 md:w-full'>
       <div>
-      <h2 className='font-bold text-left text-lg md:text-2xl'>
-                {room.name} ({room.dimension})
+      <h2 className='font-bold text-left text-lg md:text-2xl text-tertiary-dark'>
+                {room.name} <span className="text-black">({room.dimension})</span> 
               </h2>
               <div className='flex my-11'>
                 {room.offeredAmenities.map(amenity => (
@@ -166,19 +175,25 @@ const RoomDetails = (props:{ params: { slug: string } }) => {
                     <GiSmokeBomb />
                     <p className='ml-2 md:text-base text-xs'>Smoke Detectors</p>
                   </div>
+                  <div className='flex items-center my-1 md:my-0'>
+                  <IoTvSharp />
+                    <p className='ml-2 md:text-base text-xs'>Flat-screen TV</p>
+                  </div>
+                  <div className='flex items-center my-1 md:my-0'>
+                  <TbAirConditioning />
+                    <p className='ml-2 md:text-base text-xs'>Air conditioning</p>
+                  </div>
+                  <div className='flex items-center my-1 md:my-0'>
+                  <MdOutlineBathroom />
+                    <p className='ml-2 md:text-base text-xs'>Ensuite bathroom</p>
+                  </div>
+
               </div>
         
                  
               </div>
 
-              <div className='shadow dark:shadow-white rounded-lg p-6'>
-                <div className='items-center mb-4'>
-                  <p className='md:text-lg font-semibold'>Customer Reviews</p>
-                </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                  <RoomReview roomId={room._id} />
-                </div>
-              </div>
+     
 
       </div>
 
@@ -198,6 +213,8 @@ const RoomDetails = (props:{ params: { slug: string } }) => {
               handleBookNowClick={handleBookNowClick}
               telephone={telephone}
               setTelephone={setTelephone}
+             
+            
 
                   />
                   

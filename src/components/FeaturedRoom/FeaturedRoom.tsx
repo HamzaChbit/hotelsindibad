@@ -20,6 +20,8 @@ const FeaturedRoom: FC<Props> = props => {
     AOS.init()
 
   }, []);
+
+  
   return (
     <section className='flex md:flex-row flex-col px-4 py-10 items-center gap-12 container mx-auto'  
  >
@@ -27,7 +29,7 @@ const FeaturedRoom: FC<Props> = props => {
      >
         <div className='rounded-2xl overflow-hidden h-48 mb-4 md:mb-0' >
           <Image
-            src={featuredRoom.coverImage.url}
+            src={featuredRoom.coverImage}
             alt={featuredRoom.name}
             width={300}
             height={300}

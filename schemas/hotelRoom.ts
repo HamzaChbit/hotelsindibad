@@ -1,9 +1,10 @@
 import { defineField } from 'sanity';
 
 const roomTypes = [
-  { title: 'Single room' , value: 'single room' },
-  { title: 'Double room ', value: 'double room' },
-  { title: 'Triple room', value: 'triple room' },
+  { title: 'Twin Room with Bathroom' , value: 'twin room with bathroom' },
+  { title: 'Superior Double Room ', value: 'superior double room' },
+  { title: 'Comfort Triple Room', value: 'comfort triple room' },
+  { title: 'Suite with Balcony', value: 'suite with balcony' },
 ];
 
 const hotelRoom = {
@@ -31,14 +32,13 @@ const hotelRoom = {
       title: 'Description',
       type: 'text',
       validation: Rule =>
-        Rule.required().min(100).error('Minimum 100 Characters'),
+        Rule.required().min(50).error('Minimum 100 Characters'),
     }),
     defineField({
       name: 'price',
       title: 'Price',
       type: 'number',
-      validation: Rule =>
-        Rule.required().min(100).error('Minimum 100 Characters'),
+      validation: Rule => Rule.min(0),
     }),
     defineField({
       name: 'discount',
@@ -46,33 +46,25 @@ const hotelRoom = {
       type: 'number',
       initialValue: 0,
       validation: Rule => Rule.min(0),
+    }),  
+      defineField({
+      name: "images",
+      title: "images",
+      type: "array",
+      of: [{ type: 'image', options: { hotspot: true } }]
     }),
-    defineField({
-      name: 'images',
-      title: 'Images',
-      type: 'array',
-      of: [
-        {
-          type: 'object',
-          fields: [
-            { name: 'url', type: 'url', title: 'URL' },
-            { name: 'file', type: 'file', title: 'File' },
-          ],
-        },
-      ],
-      validation: Rule =>
-        Rule.required().min(3).error('Minimum of 3 images required'),
-    }),
+ 
     defineField({
       name: 'coverImage',
       title: 'Cover Image',
-      type: 'object',
-      fields: [
-        { name: 'url', type: 'url', title: 'URL' },
-        { name: 'file', type: 'file', title: 'File' },
-      ],
-      validation: Rule => Rule.required().error('Cover Image is required'),
+      type: 'image',
+     
+      options: {
+        hotspot: true, // Allows selecting a hotspot for cropping
+      },
+    
     }),
+  
     defineField({
       name: 'type',
       title: 'Room Type',

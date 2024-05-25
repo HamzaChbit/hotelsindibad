@@ -9,8 +9,8 @@ import { PhoneInput } from 'react-international-phone';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-international-phone/style.css';
-import { useSession } from 'next-auth/react';
 import Link from 'next/link';
+import { useUser } from '@clerk/nextjs';
 type Props ={
   price: number;
   discount : number;
@@ -26,13 +26,16 @@ type Props ={
   noOfChildren: number;
   telephone: string;
   isBooked:boolean;
+  
   setTelephone: Dispatch<SetStateAction<string>>;
   handleBookNowClick: () => void;
 }
 
 
 const BookRoomCta:FC<Props> = props => {
-  const { data: session } = useSession();
+  
+  const { user } = useUser();
+  const userId = user;
 const {price,discount ,specialNote,
   checkinDate,
   setCheckinDate,
@@ -46,13 +49,14 @@ const {price,discount ,specialNote,
   isBooked,
   telephone, // Add telephone prop
   setTelephone, 
-  handleBookNowClick
+  handleBookNowClick,
+
 
 }=props;
-  const discountPrice = price - (price / 100) * discount;
-
   
 
+  const discountPrice = price - (price * discount / 100);
+  const discountedPriceInt = Math.floor(discountPrice);
   const calcNoOfDays = () => {
     if (!checkinDate || !checkoutDate) return 0;
     const timeDiff = checkoutDate.getTime() - checkinDate.getTime();
@@ -64,9 +68,9 @@ const {price,discount ,specialNote,
 
   return (
    <div className='px-7 py-6'>
-   <h3>
+   <h3 >
    <span
-          className={`${discount ? 'text-gray-400' : ''} font-bold text-xl`}
+          className={`${discount ? 'text-gray-400' : ''} font-bold text-xl `}
         >
           $ {price}
         </span>
@@ -74,7 +78,7 @@ const {price,discount ,specialNote,
           <span className='font-bold text-xl'>
             {' '}
             | discount {discount}%. Now{' '}
-            <span className='text-tertiary-dark'>$ {discountPrice}</span>
+            <span className='text-tertiary-dark'>$ {discountedPriceInt}</span>
           </span>
         ) : (
           ''
@@ -178,7 +182,7 @@ const {price,discount ,specialNote,
       }
 
 {
-  session?.user ?    <button
+  userId?    <button
         disabled={isBooked}
         onClick={handleBookNowClick}
         className='btn-primary w-full mt-6 disabled:bg-gray-500 disabled:cursor-not-allowed'
@@ -191,7 +195,7 @@ const {price,discount ,specialNote,
       
         className='btn-primary w-full mt-6 disabled:bg-gray-500 disabled:cursor-not-allowed'
       >
-   <Link href='/auth' >Sign Up</Link> 
+   <Link href='/sign-up' >Sign Up</Link> 
       </button>
 }
   
