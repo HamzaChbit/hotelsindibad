@@ -1,4 +1,4 @@
-import { CreateReviewDto, Review, UpdateReviewDto } from './../models/review';
+
 import axios from 'axios';
 
 
@@ -120,14 +120,4 @@ export async function getUserBookings(userId: string) {
 
   return result;
 }
-
-// export async function getUserData(userId: string) {
-//   const result = await sanityClient.fetch(
-//     queries.getUserDataQuery,
-//     { userId },
-//     { cache: 'no-cache' }
-//   );
-
-//   return result;
-// }
 
