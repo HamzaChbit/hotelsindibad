@@ -5,7 +5,6 @@ import { getUserBookings } from "@/libs/apis"
 import Image from "next/image"
 import useSWR from "swr"
 
-import { FaSignOutAlt } from "react-icons/fa"
 import { useState } from "react"
 import { BsJournalBookmarkFill } from "react-icons/bs"
 import { GiMoneyStack } from "react-icons/gi"
