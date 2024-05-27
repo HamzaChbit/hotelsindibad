@@ -17,14 +17,14 @@ const Footer = () => {
 
         <div className='flex flex-wrap gap-16 items-center justify-between'>
           <div className='flex-1'>
-            <p>N° 8 Ave Abderrahim Bouabid</p>
+            <p> Place Lahcen Oubrahim, Tamri, Talborjt, Talborjt, 80000 Agadir, Morocco </p>
             {/* <div className='flex items-center py-4'>
               <BsFillSendFill />
               <p className='ml-2'>codewithlari</p>
             </div> */}
             <div className='flex items-center'>
               <BsTelephoneOutbound />
-              <p className='ml-2'>0528232345</p>
+              <p className='ml-2'>0528823477</p>
             </div>
        
           </div>

@@ -14,7 +14,7 @@ type Props = {
 
     return (
       
-  <div className='rounded-xl w-72 mb-10 mx-auto md:mx-0 overflow-hidden text-black border-2 border-tertiary-dark p-2'  >
+  <div className='rounded-xl h-full mb-10 mx-auto md:mx-0 overflow-hidden text-black border-2 border-tertiary-dark p-2 flex w-full md:1/3 lg:w-auto flex-col md:flex-row'  >
         <div className='h-60 cursor-pointer overflow-hidden '>
                <Link href={`/rooms/${slug.current}`} >  
                 <Image
@@ -29,10 +29,10 @@ type Props = {
      
        
   
-        <div className='p-2 bg-white '>
-          <div className=' text-xl font-semibold'>
+        <div className='md:p-4 p-1 bg-white   '>
+          <div className=' text-xl flex font-semibold md:flex-row justify-between flex-col '>
             <p>{name}</p>
-           <p>$ {price}</p>
+           <p className="text-yellow-500 ">$ {price}</p>
       
           </div>
   

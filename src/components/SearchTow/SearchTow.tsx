@@ -42,11 +42,11 @@ const handleFilterClick = () => {
            onChange={handleRoomTypeChange}
               className='w-full px-8 py-4  capitalize rounded leading-tight dark:bg-black border-2 border-tertiary-dark focus:outline-none '
             >
-             <option value='All'>All</option>
-             <option value='twin room with bathroom'>Twin Room with Bathroom</option>
-              <option value='superior double room'>Superior Double Room</option>
-              <option value='comfort triple room'>Comfort Triple Room</option>  
-               <option value='suite with balcony'>Suite with Balcony</option>   
+         <option value='All'>All</option>
+         
+         <option value='standard double room'>Standard Double Room</option>
+         <option value='double room with garden view'>Double Room with Garden View</option>  
+          <option value='standard family room'>Standard Family Room</option> 
             </select>
           </div>
             </div>
@@ -64,7 +64,7 @@ const handleFilterClick = () => {
           />
         </div>
         <button
-          className='px-6 md:px-[50px] lg:px-[72px] py-2 md:py-5 bg-tertiary-dark rounded-lg md:rounded-2xl shadow-sm shadow-tertiary-dark text-white font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all;'
+          className='px-6 md:px-[50px] lg:px-[72px] py-2 mb-4 md:mb-0 md:py-5 bg-tertiary-dark rounded-lg md:rounded-2xl shadow-sm shadow-tertiary-dark text-white font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all;'
           type='button'
          onClick={handleFilterClick}
         >

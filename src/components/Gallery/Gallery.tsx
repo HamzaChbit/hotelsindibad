@@ -6,7 +6,7 @@ import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
 export const Gallery  = () => {
         const Sliders = [
             {
-                url: '/images/1.jpg',
+                url: '/images/1.png',
                 title: 'Lobster',
               },
               {
@@ -14,11 +14,15 @@ export const Gallery  = () => {
                 title: 'Lobster',
               },
               {
-                url: '/images/4.jpg',
+                url: '/images/3.jpg',
                 title: 'Lobster',
               },
               {
-                url: '/images/6.jpg',
+                url: '/images/10.png',
+                title: 'Lobster',
+              },
+              {
+                url: '/images/5.jpg',
                 title: 'Lobster',
               },
         ] 

@@ -38,7 +38,7 @@ const ClientComponent: FC<Props> = props => {
         </div> */}
       </div>
 
-      <ScrollToTop smooth className='flex justify-center items-center 'color='orange'/>
+      <ScrollToTop smooth className='flex justify-center items-center 'color='blue'/>
     </section>
   );
 };

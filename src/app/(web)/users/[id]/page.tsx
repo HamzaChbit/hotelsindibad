@@ -68,7 +68,7 @@ const UserDetails = (props:{params:{id:string}}) => {
 
      <div className='md:col-span-8 lg:col-span-9'>
      <div className='flex items-center'>
-           <h5 className='text-2xl font-bold mr-3'>Hello, {user?.fullName}</h5>
+           <h5 className='text-2xl font-bold mr-3'>Hello, {user?.fullName}    </h5>
          </div>
          <div className='md:hidden w-14 h-14 rounded-l-full overflow-hidden'>
          { user && 

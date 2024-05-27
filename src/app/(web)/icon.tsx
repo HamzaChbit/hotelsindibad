@@ -24,7 +24,7 @@ export default function Icon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'orange',
+          color: '#016de4',
           borderRadius: '80%'
         }}
       >

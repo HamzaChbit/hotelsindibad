@@ -93,6 +93,14 @@ const userId= user?.fullName
             userId:user?.id
           });
           toast.success('An success');
+          setCheckinDate(null);
+          setCheckoutDate(null);
+          setTelephone('');
+          setAdults(1);
+          setNoOfChildren(0);
+          
+         
+         
         
         } catch (error) {
           console.log('Error: ', error);
@@ -185,7 +193,7 @@ const userId= user?.fullName
                   </div>
                   <div className='flex items-center my-1 md:my-0'>
                   <MdOutlineBathroom />
-                    <p className='ml-2 md:text-base text-xs'>Ensuite bathroom</p>
+                    <p className='ml-2 md:text-base text-xs'>Private bathroom</p>
                   </div>
 
               </div>

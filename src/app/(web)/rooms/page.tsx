@@ -65,21 +65,28 @@ const Rooms = () => {
 
 
   return (
-    <div className='  mx-auto pt-10 mt-20 flex items-center justify-center flex-col '>
+    <div className='  mx-auto pt-10 mt-20 flex items-center justify-center flex-col h-full container '>
 
+    <div>
 
-      <SearchTow
+    </div>
+   <SearchTow
         roomTypeFilter={roomTypeFilter}
         searchQuery={searchQuery}
         setRoomTypeFilter={setRoomTypeFilter}
         setSearchQuery={setSearchQuery}
       />
+
+     
       {filteredRooms.length !== 0 ?
-        <div className='flex justify-around flex-wrap w-[80%]'>
+      <div className=" flex flex-col w-[80%] ">
+          <div className='flex flex-col  md:px-10 px-2  py-8'>
           {filteredRooms.map(room => (
             <RoomCard key={room._id} room={room} />
           ))}
         </div>
+      </div>
+      
         :
         <div className="grid h-[60vh] place-content-center bg-white px-4  w-[80%] mx-5">
         <div className="text-center">
@@ -123,7 +130,7 @@ const Rooms = () => {
 
 
 
-      <ScrollToTop smooth className='flex justify-center items-center ' color='orange' />
+      <ScrollToTop smooth className='flex justify-center items-center ' color='blue' />
     </div>
   );
 

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 export const heading1 = (
-  <div className=''>
+  <div className='opacity-0'>
     <div className='flex items-center justify-center'>
       <div className='w-12 h-0.5 bg-white mt-4' >
 

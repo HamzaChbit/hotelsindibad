@@ -15,7 +15,7 @@ const NewsLetter = () => {
         <div className="relative h-64 sm:h-80 lg:h-full">
           <img
             alt="hotel"
-            src="/images/10.jpg"
+            src="/images/8.jpg"
             className="absolute inset-0 h-full w-full object-cover"
         
           />
@@ -31,19 +31,19 @@ const NewsLetter = () => {
         <div className="p-8 sm:p-16 lg:p-24 flex justify-evenly flex-col " data-aos="fade-up">
           <div>
                 <h2 className="text-3xl font-bold sm:text-3xl tracking-wide ">
-          <span  className="text-tertiary-dark border-b-2 border-black">HOTEL</span> RIAD SALAM AGADIR          </h2>
+          <span  className="text-tertiary-dark border-b-2 border-black">HOTEL</span> Sindibad  AGADIR          </h2>
 
 
           <p className="mt-4 text-gray-600">
-          Located in Agadir Close to the Sunday market, this 3-star 
+          Close to popular landmarks like Mosquee Mohamed V (0.8 km) and La Grande Roue Agadir (2.0 km), Hotel Sindibad is the perfect starting point for exploring Agadir., this 2-star 
           </p>
           </div>
       
 <div>
   <h2  className="text-xl font-bold  mb-5 ">ALL GUEST ROOMS HAVE A VIEW AND RELAXATION FACILITIES</h2>
   <p className=" text-md text-gray-600">
-          ALL GUEST ROOMS HAVE A VIEW AND RELAXATION FACILITIES
-Views of the gardens,   All rooms are air-conditioned and also feature satellite TV. Some rooms have a private balcony. Dining options at Riad Al Salam Café include a buffet breakfast,  Moroccan specialties, fish dishes, and international food. 
+  ALL GUEST ROOMS HAVE A VIEW AND RELAXATION FACILITIES
+ALL GUEST ROOMS HAVE A VIEW AND RELAXATION FACILITIES Views of the gardens, All rooms are air-conditioned and also feature satellite TV. Some rooms have a private balcony. 
           </p>   <Link
             href="/rooms"
             className="mt-8 inline-block rounded border border-tertiary-dark bg-tertiary-dark  px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-tertiary-dark  focus:outline-none focus:ring active:text-tertiary-dark "

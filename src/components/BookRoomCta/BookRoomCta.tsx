@@ -56,7 +56,7 @@ const {price,discount ,specialNote,
   
 
   const discountPrice = price - (price * discount / 100);
-  const discountedPriceInt = Math.floor(discountPrice);
+ 
   const calcNoOfDays = () => {
     if (!checkinDate || !checkoutDate) return 0;
     const timeDiff = checkoutDate.getTime() - checkinDate.getTime();
@@ -78,7 +78,7 @@ const {price,discount ,specialNote,
           <span className='font-bold text-xl'>
             {' '}
             | discount {discount}%. Now{' '}
-            <span className='text-tertiary-dark'>$ {discountedPriceInt}</span>
+            <span className='text-tertiary-dark'>$ {discountPrice}</span>
           </span>
         ) : (
           ''

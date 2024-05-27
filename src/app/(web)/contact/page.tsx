@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
       return;
     }
 
-    emailjs.send('service_5n844ff', 'template_rgppavu', {
+    emailjs.send('service_pdiicrc', 'template_rgppavu', {
       to_name: 'Hotel Agadir', // You can dynamically set this if needed
       from_name: data.user_name,
       message: data.message,
@@ -70,8 +70,8 @@ const Contact: React.FC = () => {
             <div className='flex  items-center  flex-row gap-x-10  py-5  ' >
               <FaMapMarkerAlt size={30} />
               <div className='flex flex-col'>
-                <h2 className='  text-xl font-bold'>Hôtel Riad salam Agadir</h2>
-                <p>N° 8 Ave Abderrahim Bouabid, Agadir 80000</p>
+                <h2 className='  text-xl font-bold'>Hôtel Sindibad Agadir</h2>
+                <p> Place Lahcen Oubrahim, Tamri, Talborjt, Talborjt, 80000 Agadir, Morocco </p>
               </div>
 
             </div>
@@ -81,7 +81,7 @@ const Contact: React.FC = () => {
               <MdOutlineEmail size={30} />
               <div className='flex flex-col'>
                 <h1 className='  text-xl font-bold'>Email</h1>
-                <p>reception@hotelriadsalam.com</p>
+                <p>sindibad.resa@gmail.com</p>
               </div>
             </div>
 
@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
               <div className='flex flex-col'>
                 <h1 className='font-bold  text-xl '>
                   PHONE</h1>
-                <p> +212 5 28 23 23 45</p>
+                <p>  +212 05 28 82 34 77</p>
               </div>
             </div>
           </div>
@@ -146,11 +146,11 @@ const Contact: React.FC = () => {
 
       </div>
       <div className='flex flex-col  mt-10  justify-between  md:flex-row h-full w-[80%] md:w-full   '>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3440.9263504285523!2d-9.5855995!3d30.4098314!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b7b11d26dedd%3A0x18da058390a05597!2sH%C3%B4tel%20Riad%20salam%20Agadir!5e0!3m2!1sfr!2sma!4v1716312219255!5m2!1sfr!2sma"
-        className='h-60  w-full   '
-         >
-        </iframe>
+    
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d860.1007257278426!2d-9.593547730446208!3d30.424678454849946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b6f4f9f90485%3A0x2b38000c5827a9b1!2sSindibad%20Hotel!5e0!3m2!1sen!2sma!4v1716832263480!5m2!1sen!2sma" className='h-60  w-full ' >
+
+          </iframe>
+       
 
       </div>
 </div>
