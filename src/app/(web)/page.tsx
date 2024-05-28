@@ -7,6 +7,7 @@ import HeroSection from "@/components/HeroSection/HeroSection";
 import NewsLetter from "@/components/NewsLetter/NewsLetter";
 import PageSearch from "@/components/PageSearch/PageSearch";
 import { getFeaturedRoom } from "@/libs/apis";
+import LoadingSpinner from "./loading";
 
 
 
@@ -17,15 +18,14 @@ export default  async function Home() {
 
   return (
     <>
+  {
+    <LoadingSpinner/> &&  <><div className=" py-10  bg-custom bg-no-repeat bg-cover bg-center mb-5  ">
 
-<div className=" py-10  bg-custom bg-no-repeat bg-cover bg-center mb-5  " >
+          <HeroSection />
+          <PageSearch />
+        </div><FeaturedRoom featuredRoom={featuredRoom} /><Gallery /><NewsLetter /></> 
+  } 
 
-       <HeroSection />
-       <PageSearch /> 
-       </div>
-     <FeaturedRoom featuredRoom={featuredRoom} /> 
-    <Gallery />
-     <NewsLetter /> 
 
   </>
   );
