@@ -55,7 +55,7 @@ const Header = () => {
                 )}
               </Link>
             ) : (
-              <Link href='/sign-up'>
+              <Link href='/sign-up 'aria-label='Sign Up'>
                 <FaUserCircle className='cursor-pointer ' color='white' />
               </Link>
             )}
