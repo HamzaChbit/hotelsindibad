@@ -13,7 +13,7 @@ const Footer = () => {
           Hotel
         </Link>
 
-        <h4 className='font-semibold text-[40px] py-6'>Contact</h4>
+        <h3 className='font-semibold text-[40px] py-6'>Contact</h3>
 
         <div className='flex flex-wrap gap-16 items-center justify-between'>
           <div className='flex-1'>
@@ -43,20 +43,15 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* <div className='bg-black h-6 md:h-[50px] mt-16 w-full bottom-0 left-0' />  */}
-
-      <div className="mt-1 border-t bg-black border-gray-100 pt-2  ">
-      <div className="flex justify-center  items-center gap-14 ">
-        <p className="text-xs text-gray-500">All rights reserved @2024  </p>
-
-        <Link href="https://www.linkedin.com/in/hamza-1dz4/"  title="Visit Hamza's LinkedIn Profile" target="_blank"className="flex  justify-start   text-gray-100 "   >
-         <FaLinkedin size={20} className='text-sky-800 border-0'  />
-          
-       
-
-
+     
+      <div className="mt-1 border-t bg-black border-gray-100 pt-2">
+    <div className="flex justify-center items-center gap-14">
+        <p className="text-xs text-white">All rights reserved @2024</p>
+        <Link href="https://www.linkedin.com/in/hamza-1dz4/" title="Visit Hamza's LinkedIn Profile" target="_blank" className="flex justify-start text-gray-100">
+            <FaLinkedin size={20} className='text-sky-800 border-0' />
         </Link>
-      </div>      </div>
+    </div>
+</div>
     </footer>
          
   );
