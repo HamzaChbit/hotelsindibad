@@ -31,6 +31,7 @@ const FeaturedRoom: FC<Props> = props => {
           <Image
             src={featuredRoom.coverImage}
             alt={featuredRoom.name}
+            title="Standard Double Room"
             width={300}
             height={300}
             className='img scale-animation'
@@ -45,7 +46,8 @@ const FeaturedRoom: FC<Props> = props => {
             <div key={image._key} className='rounded-2xl overflow-hidden'>
               <Image
                 src={image.url}
-                alt={image._key}
+                alt={"room "}
+                title="Standard Double Room"
                 width={300}
                 height={300}
                 className='img scale-animation'
@@ -85,7 +87,7 @@ const FeaturedRoom: FC<Props> = props => {
 
           <Link
             href={`/rooms/${featuredRoom.slug.current}`}
-            className='border h-fit text-center border-tertiary-dark text-tertiary-dark px-3 py-2 lg:py-5 lg:px-7 rounded-2xl font-bold lg:text-xl'
+            className='border h-fit text-center border-tertiary-dark text-tertiary-dark px-3 py-2 lg:py-5 lg:px-7 rounded-2xl font-bold lg:text-xl'  title="Visit Room"
           >
             More Details
           </Link>

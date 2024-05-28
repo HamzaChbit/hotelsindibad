@@ -39,7 +39,7 @@ const Header = () => {
       <ul className='flex items-center ml-5' >
       <li className='flex items-center' >
       {userId ? (
-              <Link href={`/users/${userId}`}>
+              <Link href={`/users/${userId}`   }    title="Visit Profile" >
                 {user.imageUrl ? (
                   <div className='w-10 h-10 rounded-full overflow-hidden'>
                     <Image
@@ -67,13 +67,13 @@ const Header = () => {
 
         <ul  className='flex items-center justify-between w-full md:w-1/3  mt-4 text-white font-semibold' >
         <li className='hover:-translate-y-2 duration-500 transition-all hover:text-tertiary-dark   px-2'>
-        <Link href="/">Home</Link>
+        <Link href="/" title='Home'>Home</Link>
           </li>
           <li className='hover:-translate-y-2 duration-500 transition-all px-2 hover:text-tertiary-dark'>
-          <Link href="/rooms">Rooms</Link>
+          <Link href="/rooms"  title="Rooms">Rooms</Link>
         </li>
         <li className='hover:-translate-y-2 duration-500 transition-all px-2 hover:text-tertiary-dark'>
-          <Link href="/contact">Contact</Link>
+          <Link href="/contact"  title="Contact">Contact</Link>
         </li>
       
         </ul>

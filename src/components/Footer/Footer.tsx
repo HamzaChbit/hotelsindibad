@@ -49,7 +49,7 @@ const Footer = () => {
       <div className="flex justify-center  items-center gap-14 ">
         <p className="text-xs text-gray-500">All rights reserved @2024  </p>
 
-        <Link href="https://www.linkedin.com/in/hamza-1dz4/" target="_blank"className="flex  justify-start   text-gray-100 ">
+        <Link href="https://www.linkedin.com/in/hamza-1dz4/"  title="Visit Hamza's LinkedIn Profile" target="_blank"className="flex  justify-start   text-gray-100 "   >
          <FaLinkedin size={20} className='text-sky-800 border-0'  />
           
        

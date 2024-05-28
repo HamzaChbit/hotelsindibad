@@ -48,7 +48,8 @@ const UserDetails = (props:{params:{id:string}}) => {
         { user && 
   <Image
                   src={user.imageUrl}
-             alt={user?.username || "user"}
+             alt={"user"}
+             title="Standard Double Room"
              width={143}
              height={143}
              className='img scale-animation rounded-full'
@@ -74,7 +75,8 @@ const UserDetails = (props:{params:{id:string}}) => {
          { user && 
   <Image
                   src={user.imageUrl}
-             alt={user?.username || "user"}
+             alt={"user"}
+             title="Standard Double Room"
              width={143}
              height={143}
              className='img scale-animation rounded-full'
