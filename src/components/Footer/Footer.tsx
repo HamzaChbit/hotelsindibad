@@ -9,8 +9,8 @@ const Footer = () => {
   return (
     <footer className='mt-16 '>
       <div className='container mx-auto px-4'>
-        <Link href='/' className='font-black text-tertiary-dark'>
-          Hotelzz
+        <Link href='/' className='font-black text-tertiary-dark' title='Home'>
+          Hotel
         </Link>
 
         <h4 className='font-semibold text-[40px] py-6'>Contact</h4>
@@ -31,7 +31,7 @@ const Footer = () => {
 
           <div className='flex-1 md:text-right'>
         
-            <Link href="/rooms" className='pb-4 hover:text-black'>Get in Touch</Link>
+            <Link href="/rooms" className='pb-4 hover:text-black' title='Rooms'>Get in Touch</Link>
             <p className='pb-4'>Our Privacy Commitment</p>
      
           </div>
