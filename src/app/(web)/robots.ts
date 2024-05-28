@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       
     },
   ],
-    sitemap: 'https://hotelriadsalam.vercel.app/sitemap.xml',
+    sitemap: 'https://hotelsindibad.vercel.app/sitemap.xml',
   }
 }

@@ -15,7 +15,7 @@ import Footer from "@/components/Footer/Footer";
 export const metadata: Metadata = {
   title: 'Sindibad Hotel',
   description: 'Sindibad offers excellent value for money, with competitive prices and a wide range of amenities. The hotel is strategically located in the heart of Agadir, in the historic and touristy neighborhood of Talborjt. It is surrounded by two large squares, a beautiful pedestrian street leading to the sea, markets, restaurants, cafes, local shops, and dozens of boutiques and franchises. Two major markets, Aswak Assalam and Carrefour Market, are just a stone',
-  keywords:["Hôtel Riad Salam Agadir","Riad Salam","Hôtel Riad Salam","Agadir","best hotel","hotel","Hotel"],
+  keywords:["Sindibad Hotel","Sindibad ","sindibad","Agadir","best hotel","hotel","Hotel"],
 };
 const poppins = Poppins({
   subsets: ['latin'],
