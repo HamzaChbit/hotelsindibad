@@ -18,8 +18,7 @@ export default  async function Home() {
 
   return (
     <>
-    {
-      <LoadingSpinner/> ?  <>
+
     <div className="  bg-no-repeat bg-cover bg-center mb-5 bg-opacity-100 bg-contrast-50 "style={{ backgroundImage: `url(${fetch.coverImage})` }}>
      
      
@@ -37,8 +36,8 @@ export default  async function Home() {
           <NewsLetter />
       
      
-          </> : <LoadingSpinner/>
-    } 
+ 
+  
   
   
     </>
