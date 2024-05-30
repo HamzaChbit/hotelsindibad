@@ -44,6 +44,12 @@ export const getRoom = groq`*[_type == "hotelRoom" && slug.current == $slug][0] 
     type
 }`;
 
+export const getbgQuery = groq`*[_type == "hotelToom"][0] { 
+    _id, 
+    "coverImage": coverImage.asset->url,
+    name,
+}`;
+
 export const getUserBookingsQuery = groq`*[_type == 'booking' && userId == $userId]  {
     _id,
     hotelRoom -> {

@@ -37,6 +37,14 @@ export async function getRoom(slug: string) {
 }
 
 
+export async function getbg() {
+  const result = await sanityClient.fetch<Room>(
+    queries.getbgQuery,
+    {},
+    { cache: 'no-cache' }
+  );
+  return result;
+}
 
 
 
