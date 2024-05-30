@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   authors:[{name:"Hotel Sindibad"}],
   creator:"Hotel Sindibad",
   publisher:"Hotel Sindibad",
+  twitter:{
+    card:"summary_large_image"
+        },
   openGraph: {
     title: 'Hotel Sindibad',
     description: 'Sindibad offers excellent value for money, with competitive prices and a wide range of amenities...',

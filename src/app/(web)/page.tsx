@@ -7,7 +7,7 @@ import HeroSection from "@/components/HeroSection/HeroSection";
 import NewsLetter from "@/components/NewsLetter/NewsLetter";
 import PageSearch from "@/components/PageSearch/PageSearch";
 import { getFeaturedRoom, getbg } from "@/libs/apis";
-import LoadingSpinner from "./loading";
+
 
 
 
