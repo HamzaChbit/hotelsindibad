@@ -1,8 +1,7 @@
 "use client"
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { ChangeEvent, useTransition } from 'react';
-
+import { ChangeEvent, useState, useTransition } from 'react';
 
 export default function LocalSwitcher() {
   const [isPending, startTransition] = useTransition();
@@ -15,23 +14,20 @@ export default function LocalSwitcher() {
       router.replace(`/${nextLocale}`);
     });
   };
+ 
 
   return (
-    <label className=' mt-0 bg-transparent text-black border-none '>
-      <p className='sr-only'>Change language</p>
+    <div className='rounded-3xl border-none bg-white  bg-transparent  h-6 text-2xl font-semibold '>
+     
       <select
         defaultValue={localActive}
-        className='bg-transparent py-2'
+        className='bg-transparent text-white  outline-none rounded-lg border-white '
         onChange={onSelectChange}
         disabled={isPending}
       >
-        <option value='en' className=' text-black'>
-        en
-        </option>
-        <option value='fr' className=' text-black'>
-         fr
-        </option>
+        <option value='en' className='text-black'>en</option>
+        <option value='fr'  className='text-black'>fr</option>
       </select>
-    </label>
+    </div>
   );
 }

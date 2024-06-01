@@ -9,7 +9,8 @@ import { FaUserCircle } from 'react-icons/fa';
 import { useTranslations } from 'next-intl';
 import LocalSwitcher from '../LocalSwitcher/local-switcher';
 import ScrollToTop from 'react-scroll-to-top';
-
+import { useState } from 'react';
+import { MdOutlineClose } from 'react-icons/md'
 
 
 
@@ -20,10 +21,15 @@ const Header = ({
 params: {locale: string};
 }>) => {
 
-  
+  const [showMenu,setShowMenu] =useState(false)
   const t = useTranslations('Navigation');
  
- 
+  function handelClick   ( ) {
+  
+    setShowMenu(false)
+
+}
+
 
   const { user } = useUser();
   const userId = user?.id;
@@ -37,9 +43,9 @@ params: {locale: string};
 
     <header className='py-5 px-4  text-xl  w-full  fixed top-0 bg-black bg-opacity-20  z-30 mb-5 '>
       
-      <div className='container mx-auto flex flex-wrap md:flex-nowrap items-center justify-between'>
+      <div className='container mx-auto flex flex-wrap md:flex-nowrap items-center justify-between '>
 
-      <div  className='flex items-center w-full md:2/3' >
+      <div  className='flex items-center w-full  justify-between md:justify-normal  ' >
       <Link href="/" className='font-black text-tertiary-dark ' >
         hOTEL
       </Link>
@@ -71,10 +77,18 @@ params: {locale: string};
       </li>
     
       </ul>
+      <div  className='block md:hidden'>
+   <div     className='w-6 h-5 flex flex-col justify-between items-center mdl:hidden text-4xl text-white cursor-pointer overflow-hidden group' onClick={()=>setShowMenu(true)} >
+                <span  className='w-full h-[2px] bg-black inline-flex transform group-hover:translate-x-2 transition-all ease-in-out duration-300 ' ></span>
+                <span  className='w-full h-[2px] bg-black inline-flex transform translate-x-3   group-hover:translate-x-0 transition-all ease-in-out duration-300 ' ></span>
+                <span  className='w-full h-[2px] bg-black inline-flex transform   translate-x-1  group-hover:translate-x-3 transition-all ease-in-out duration-300 ' ></span>
 
+            </div>
+
+</div>
     </div>
-
-        <ul  className='flex items-center justify-between w-full md:w-1/3  mt-4 text-white font-semibold' >
+<div className='hidden md:block'>
+    <ul  className='flex items-center justify-around w-full md:w-1/3  mt-4 text-white font-semibold  ' >
         <li className='hover:-translate-y-2 duration-500 transition-all hover:text-tertiary-dark   px-2'>
         <Link href={`/`} title='Home'>{t("home")}</Link>
           </li>
@@ -84,14 +98,78 @@ params: {locale: string};
         <li className='hover:-translate-y-2 duration-500 transition-all px-2 hover:text-tertiary-dark'>
           <Link href={`/${locale}/contact`}   title="Contact">Contact</Link>
         </li>
-      
-        </ul>
 
+  
+        </ul>
+</div>
+      
+
+        {showMenu && (
+          <div className='fixed inset-0 z-50  bg-gray-800 opacity-95 '>
+             <div className='w-full h-full flex items-center justify-center'> 
+             <div className='w-full py-5 mx-5 bg-black rounded-lg shadow-lg h-dull'>
+        <div className='flex flex-col items-center w-full '>
+          <MdOutlineClose
+            size={35}
+            className='text-3xl text-white absolute top-2 right-4 cursor-pointer hover:text-body duration-300'
+            onClick={() => setShowMenu(false)}
+          />
+          <div className='flex flex-col items-center justify-center py-5'>
+         
+          
+            <div className='font-medium text-2xl text-black flex flex-col gap-y-5 cursor-pointer justify-between items-center '>
+             
+            <ul  className='flex flex-col items-center justify-between w-full  mt-4 text-white font-semibold  gap-y-5 h-full' >
+        <li className='hover:-translate-y-2 duration-500 transition-all hover:text-tertiary-dark   px-2'>
+        <Link href={`/`}   onClick={() => setShowMenu(false)} title='Home'>{t("home")}</Link>
+          </li>
+          <li className='hover:-translate-y-2 duration-500 transition-all px-2 hover:text-tertiary-dark'>
+          <Link  href={`/${locale}/rooms`} onClick={() => setShowMenu(false)}   title="Rooms">{t("rooms")}</Link>
+        </li>
+        <li className='hover:-translate-y-2 duration-500 transition-all px-2 hover:text-tertiary-dark'>
+          <Link href={`/${locale}/contact`} onClick={() => setShowMenu(false)}  title="Contact">Contact</Link>
+        </li>
+  
+        </ul>
+<div className='cursor-pointer'>
+   <LocalSwitcher />
+</div>
+
+
+  
+
+       
+
+
+            </div>
+          
+        
+          </div>
+        </div>
+      </div>
+            </div>
+          </div>
+
+
+        )}
+        <div className='hidden md:block'>
+    <LocalSwitcher />
+        </div>
+    
+
+       
+
+
+
+
+
+
+
+       
+    
       </div>
       
-       <div className=' top-0 right-0 rounded-xl  border-none absolute bg-white px-0 py-0'>  
-          <LocalSwitcher />
-          </div>
+      
 
          <ScrollToTop smooth className='flex justify-center items-center 'color='blue'/>
     </header>
