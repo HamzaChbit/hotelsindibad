@@ -1,4 +1,5 @@
 'use client';
+import { useLocale, useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import React, { ChangeEvent, FC } from 'react'
 type Props = {
@@ -23,10 +24,12 @@ const handleRoomTypeChange = (e:ChangeEvent<HTMLSelectElement>) => {
 const handleSearchQueryChange = (e:ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value)
 }
-
+const t = useTranslations('Search');
+const local = useLocale()
 const handleFilterClick = () => {
-    router.push(`/rooms?roomType=${roomTypeFilter}&searchQuery=${searchQuery}`);
-  };
+  router.push(`${local}/rooms?roomType=${roomTypeFilter}&searchQuery=${searchQuery}`);
+};
+
 
 
   return (
@@ -34,7 +37,7 @@ const handleFilterClick = () => {
         <div className='flex gap-4 flex-wrap justify-between items-center   md:px-10 px-2  py-8 rounded-lg border-2 border-tertiary-dark ' >
             <div className='w-full md:1/3 lg:w-auto mb-4 md:mb-0' >
             <label  htmlFor="roomTypeSelect" className='block text-xl font-medium mb-2 text-dark'>
-            Room Type :
+            {t("type")}
           </label>
           <div className='relative'>
             <select
@@ -43,17 +46,18 @@ const handleFilterClick = () => {
            onChange={handleRoomTypeChange}
               className='w-full px-8 py-4  capitalize rounded leading-tight dark:bg-black border-2 border-tertiary-dark focus:outline-none '
             >
-         <option value='All'>All</option>
+        <option value='All'>{t("all")}</option>
          
-         <option value='standard double room'>Standard Double Room</option>
-         <option value='double room with garden view'>Double Room with Garden View</option>  
-          <option value='standard family room'>Standard Family Room</option> 
+         <option value='standard double room'>{t("twin")}</option>
+        
+          <option value='double room with garden view'>{t("family")}</option>        
+          <option value='standard family room'>{t("single")}</option>    
             </select>
           </div>
             </div>
             <div className='w-full md:1/3 lg:w-auto mb-4 md:mb-0'>
           <label className='block text-xl font-medium mb-2  text-black'>
-            Search :
+          {t('search')}
           </label>
           <input
             type='search'
@@ -69,7 +73,7 @@ const handleFilterClick = () => {
           type='button'
          onClick={handleFilterClick}
         >
-          Search
+         {t('search')}
         </button>
 
         </div>

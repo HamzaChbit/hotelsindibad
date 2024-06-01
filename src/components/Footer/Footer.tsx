@@ -1,4 +1,5 @@
 "use client"
+import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import {  BsTelephoneOutbound } from 'react-icons/bs';
 import { FaLinkedin } from 'react-icons/fa';
@@ -6,6 +7,8 @@ import { FaLinkedin } from 'react-icons/fa';
 
 
 const Footer = () => {
+  const t = useTranslations('Footer');
+  const locale = useLocale()
   return (
     <footer className='mt-16 '>
       <div className='container mx-auto px-4'>
@@ -31,14 +34,14 @@ const Footer = () => {
 
           <div className='flex-1 md:text-right'>
         
-            <Link href="/rooms" className='pb-4 hover:text-black' title='Rooms'>Get in Touch</Link>
-            <p className='pb-4'>Our Privacy Commitment</p>
+          <Link href={`/${locale}/contact`} className='pb-4 hover:text-black' title='Rooms'>{t("touch")}</Link>
+            <p className='pb-4'>{t("privacy")}</p>
      
           </div>
 
           <div className='flex-1 md:text-right'>
-          <p className='pb-4'>Terms of service</p>
-            <p>Customer Assistance</p>
+          <p className='pb-4'>{t("service")}</p>
+            <p>{t("customer")}</p>
           </div>
         </div>
       </div>
@@ -46,7 +49,7 @@ const Footer = () => {
      
       <div className="mt-1 border-t bg-black border-gray-100 pt-2">
     <div className="flex justify-center items-center gap-14">
-        <p className="text-xs text-white">All rights reserved @2024</p>
+    <p className="text-xs text-white">{t("copyright")}</p>
         <Link href="https://www.linkedin.com/in/hamza-1dz4/" title="Visit Hamza's LinkedIn Profile" target="_blank" className="flex justify-start text-gray-100">
             <FaLinkedin size={20} className='text-sky-800 border-0' />
         </Link>

@@ -35,13 +35,23 @@ type Slug = {
 export type Room = {
   _id: string;
   coverImage: string;
-  description: string;
-  dimension: string;
+  description: {
+    en:string;
+    fr:string;
+  }
+  dimension: {
+    en:string;
+    fr:string;
+  }
   discount: number;
   images: Image[];
   isBooked: boolean;
   isFeatured: boolean;
-  name: string;
+  name: {
+    en: string;
+    fr: string;
+    // Add more locales if needed
+  };
   numberOfBeds: number;
   offeredAmenities: Amenity[];
   price: number;

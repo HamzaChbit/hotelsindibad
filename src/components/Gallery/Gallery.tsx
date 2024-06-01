@@ -46,7 +46,7 @@ export const Gallery  = () => {
             useEffect(() => {
               const interval = setInterval(() => {
                 NextSliders();
-              }, 3000); // Change image every 3 seconds
+              }, 4000); // Change image every 4 seconds
           
               return () => clearInterval(interval); // Cleanup interval on component unmount
             }, [Caret]);

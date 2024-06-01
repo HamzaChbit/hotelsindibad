@@ -1,0 +1,80 @@
+{
+    "IndexPage": {
+      "title": "WELCOME TO Hotel Sindibad Agadir",
+      "description": "a traditional hotel located in the souss region of agadir."
+    },
+    "Contact": {
+      "get":"Get in",
+      "touche": "Touch",
+      "description": "Fill in the form with your questions, comments and concerns, and  we will get right back to you.",
+      "info":"CONTACT INFO",
+      "infoDec":" Have any Queries? Let us know. We will clear it for you at the best.",
+      "phone":"PHONE",
+      "name":"Your Name",
+      "error":"This field is required"
+  
+    },
+    "FeaturedRoom":{
+      "featured":"Featured Room",
+      "from":"Start From",
+      "discount":"Discount",
+      "more":"More Details"
+    },
+  
+  
+    "Navigation": {
+      "home": "Home",
+      "rooms":"Rooms"
+    },
+    "Search": {
+      "type": "  Room Type :",
+      "search":" Search :",
+      "all":"All",
+      "twin":"Twin Room",
+      "suite":"Suite",
+      "family":"Family Room",
+      "single":"Single Room"
+    }, 
+    "NewsLetter":{
+      "description":"Close to popular landmarks like Mosquee Mohamed V (0.8 km) and La Grande Roue Agadir (2.0 km), Hotel Sindibad is the perfect starting point for exploring Agadir., this 2-star ",
+      
+      "title":"ALL GUEST ROOMS HAVE A VIEW AND RELAXATION FACILITIES",
+
+      "decOne":"Sindibad offers excellent value for money, with competitive prices and a wide range of amenities. The hotel is strategically located in the heart of Agadir, in the historic and touristy neighborhood of Talborjt. It is surrounded by two large squares, a beautiful pedestrian street leading to the sea, markets, restaurants, cafes, local shops, and dozens of boutiques and franchises. Two major markets, Aswak Assalam and Carrefour Market, are just a stone's throw away.",
+
+
+      
+      "get":"Get in Touch "
+    },
+    "Card":{
+      "room":"Room",
+      "button":"BOOK NOW"
+    },
+    "BookNow":{
+      "checkIn":" Check in Date",
+      "checkOut":"Check Out Date",
+      "adults":" Adults",
+      "children":"Children",
+      "total":"Total Price",
+      "book":"Book Now",
+      "singUp":"Sign Up"
+    },
+    "pageRoom":{
+      "amenities":"Offered Amenities",
+      "safety":"Safety And Hygiene",
+      "cleaning":"Daily Cleaning",
+      "fire":"Fire Extinguishers",
+      "disinfections":"Disinfections and Sterilizations",
+      "smoke":"Smoke Detectors",
+      "TV":"Flat-screen TV",
+      "air":"Air conditioning",
+      "bathroom":"Private bathroom"
+    },
+    "Footer": {
+      "copyright": "© 2024 Your App. All rights reserved.",
+      "getintouch":"Get in Touch",
+      "privacy":"Our Privacy Commitment",
+      "service":"Terms of service",
+      "customer":"Customer Assistance"
+    }
+  }

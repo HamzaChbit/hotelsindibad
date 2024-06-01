@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { useForm } from 'react-hook-form';
 import { FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import { MdOutlineEmail } from 'react-icons/md';
+import { useTranslations } from 'next-intl';
 interface FormData {
   user_name: string;
 
@@ -13,6 +14,7 @@ interface FormData {
 }
 
 const Contact: React.FC = () => {
+  const t = useTranslations('Contact');
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
   const form = useRef<HTMLFormElement>(null);
 
@@ -55,14 +57,14 @@ const Contact: React.FC = () => {
 <div  className='flex flex-col h-full w-full mx-2  items-center ' >
    <div className='flex flex-col  mt-10  justify-between   items-center gap-x-10 md:flex-row h-full ' >
         <div className='flex flex-col gap-y-5   w-[80%]  md:w-[40%]' >
-          <h1 className='py-4 text- text-4xl font-bold tracking-wide'><span className='text-tertiary-dark'>Get in </span>
-            Touch</h1>
-          <p className='text-xl mb-8  maw-w-[40%] ' >Fill in the form with your questions, comments and concerns, and  we will get right back to you.</p>
+        <h1 className='py-4 text- text-4xl font-bold tracking-wide'><span className='text-tertiary-dark'>{t("get")} </span>
+            {t("touche")}</h1>
+          <p className='text-xl mb-8  maw-w-[40%] ' >{t("description")}</p>
           <hr className='text-tertiary-dark' />
 
-          <h1 className='pt-4 text-green text-2xl font-bold' >CONTACT INFO</h1>
+          <h1 className='pt-4 text-green text-2xl font-bold' >{t("info")}</h1>
           <p>
-            Have any Queries? Let us know. We will clear it for you at the best.
+          {t("infoDec")}
           </p>
 
 
@@ -89,7 +91,7 @@ const Contact: React.FC = () => {
               <FaPhone size={30} />
               <div className='flex flex-col'>
                 <h1 className='font-bold  text-xl '>
-                  PHONE</h1>
+                {t("phone")}</h1>
                 <p>  +212 05 28 82 34 77</p>
               </div>
             </div>
@@ -105,13 +107,13 @@ const Contact: React.FC = () => {
         <form ref={form} onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-[80%] md:w-[40%] '>
           <div className='flex flex-col md:flex-row justify-between gap-x-10 py-8'>
             <div className='flex flex-col w-full'>
-              <label className='py-3 text-green text-2xl font-medium'>Your Name </label>
+              <label className='py-3 text-green text-2xl font-medium'>{t("name")} </label>
               <input
                 type="text"
                 {...register("user_name", { required: true })}
                 className='border-b-2 mt-1 w-full  py-3 bg-hero focus:border-b-green text-xl shadow-sm placeholder-slate-400 focus:outline-none  '
               />
-              {errors.user_name && <span className="text-red-500">This field is required</span>}
+              {errors.user_name && <span className="text-red-500">{t("error")}</span>}
             </div>
 
           </div>
@@ -121,13 +123,13 @@ const Contact: React.FC = () => {
             {...register("user_email", { required: true })}
             className='border-b-2 mt-1 w-full  py-3 bg-hero focus:border-b-green text-xl shadow-sm placeholder-slate-400 focus:outline-none  '
           />
-          {errors.user_email && <span className="text-red-500">This field is required</span>}
+          {errors.user_email && <span className="text-red-500">{t("error")}</span>}
           <label className='py-8 text-green text-2xl font-medium'>Message</label>
           <textarea
             {...register("message", { required: true })}
             className='border-b-2 mt-1 w-full  py-5  focus:border-red text-xl shadow-sm placeholder-slate-400   '
           />
-          {errors.message && <span className="text-red-500">This field is required</span>}
+          {errors.message && <span className="text-red-500">{t("error")}</span>}
           <div className='flex justify-end'>
             <input
               type="submit"

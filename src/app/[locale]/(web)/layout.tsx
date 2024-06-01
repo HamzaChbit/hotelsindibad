@@ -9,6 +9,8 @@ import ThemeProvider from "@/components/ThemeProvider/ThemeProvider";
 import Toast from "@/components/Tosat/Toast";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
 
 
@@ -19,6 +21,7 @@ export const metadata: Metadata = {
   authors:[{name:"Hotel Sindibad"}],
   creator:"Hotel Sindibad",
   publisher:"Hotel Sindibad",
+  metadataBase: new URL("https://hotelsindibad.vercel.app"),
   twitter:{
     card:"summary_large_image"
         },
@@ -36,14 +39,16 @@ const poppins = Poppins({
   style: ['italic', 'normal'],
   variable: '--font-poppins',
 });
-export default function RootLayout({
-  children,
+export default async function  RootLayout({
+  children, params: {locale}
 }: Readonly<{
   children: React.ReactNode;
+  params: {locale: string};
 }>) {
+  const messages = await getMessages();
   return (  
      <ClerkProvider>
-    <html lang="en" >
+    <html lang={locale} >
        <head>
     
          <meta property="og:title" content='Sindibad Hotel' />
@@ -52,7 +57,7 @@ export default function RootLayout({
         <meta property="og:url" content={'https://hotelsindibad.vercel.app/'} />
       </head>
       <body className={poppins.className}>
-   
+      <NextIntlClientProvider messages={messages}>
         
    
       <ThemeProvider>
@@ -63,7 +68,9 @@ export default function RootLayout({
 
  '>
       
-      <Header/> 
+      <Header  params={{
+                  locale: locale
+                }}/> 
    
        
         {children}
@@ -73,7 +80,7 @@ export default function RootLayout({
      
    
         </ThemeProvider>
-       
+        </NextIntlClientProvider>
         </body>
     </html> 
     </ClerkProvider>

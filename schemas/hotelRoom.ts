@@ -15,9 +15,12 @@ const hotelRoom = {
     defineField({
       name: 'name',
       title: 'Name',
-      type: 'string',
-      validation: Rule =>
-        Rule.required().max(50).error('Maximum 50 Characters'),
+      type: 'object',
+      fields: [
+        { name: 'en', title: 'English', type: 'string', validation: Rule => Rule.required().max(50).error('Maximum 50 Characters') },
+        { name: 'fr', title: 'French', type: 'string', validation: Rule => Rule.required().max(50).error('Maximum 50 Characters') },
+      ],
+      
     }),
     defineField({
       name: 'slug',
@@ -30,9 +33,12 @@ const hotelRoom = {
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'text',
-      validation: Rule =>
-        Rule.required().min(50).error('Minimum 100 Characters'),
+       type: 'object',
+      
+      fields: [
+        { name: 'en', title: 'English', type: 'string',  },
+        { name: 'fr', title: 'French', type: 'string',  },
+      ],
     }),
     defineField({
       name: 'price',
@@ -86,7 +92,11 @@ const hotelRoom = {
     defineField({
       name: 'dimension',
       title: 'Dimension',
-      type: 'string',
+      type: 'object',
+      fields: [
+        { name: 'en', title: 'English', type: 'string',  },
+        { name: 'fr', title: 'French', type: 'string',  },
+      ],
     }),
     defineField({
       name: 'numberOfBeds',

@@ -11,6 +11,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import 'react-international-phone/style.css';
 import Link from 'next/link';
 import { useUser } from '@clerk/nextjs';
+import { useLocale, useTranslations } from 'next-intl';
 type Props ={
   price: number;
   discount : number;
@@ -64,8 +65,8 @@ const {price,discount ,specialNote,
     return noOfDays;
   };
  
- 
-
+  const locale = useLocale()
+  const t = useTranslations('BookNow');
   return (
    <div className='px-7 py-6'>
    <h3 >
@@ -90,7 +91,7 @@ const {price,discount ,specialNote,
    <div className='flex'>
     <div className="w-1/2 pr-2" >
       <label htmlFor="check-in-date" className="block text-sm font-medium text-gray-900 dark:text-gray-400">
-      Check in Date
+      {t("checkIn")}
       </label>
       <DatePicker
        selected={checkinDate} 
@@ -104,7 +105,7 @@ const {price,discount ,specialNote,
     </div>
     <div className="w-1/2 pr-2" >
       <label htmlFor="check-out-date" className="block text-sm font-medium text-gray-900 dark:text-gray-400">
-      Check Out Date
+      {t("checkOut")}
       </label>
       <DatePicker
        selected={checkoutDate} 
@@ -122,7 +123,7 @@ const {price,discount ,specialNote,
         <div  className='flex mt-4' >
           <div className='w-1/2 pr-2' >
             <label htmlFor="adults" className='block text-sm font-medium text-gray-900 dark:text-dark-400'>
-              Adults
+            {t("adults")}
             </label>
             <input type="number" id='adults' value={adults}    onChange={e => setAdults(+e.target.value)}
             min={1}
@@ -138,7 +139,7 @@ const {price,discount ,specialNote,
             htmlFor='children'
             className='block text-sm font-medium text-gray-900 dark:text-gray-400'
           >
-            Children
+             {t("children")}
           </label>
           <input
             type='number'
@@ -176,7 +177,7 @@ const {price,discount ,specialNote,
 
         {calcNoOfDays() > 0 ?( <p className='mt-3'>
 
-          Total Price: $ {calcNoOfDays() * discountPrice}
+          {t("total")}: $ {calcNoOfDays() * discountPrice}
         </p>)
       : ( <></>)
       }
@@ -187,7 +188,7 @@ const {price,discount ,specialNote,
         onClick={handleBookNowClick}
         className='btn-primary w-full mt-6 disabled:bg-gray-500 disabled:cursor-not-allowed'
       >
- {isBooked ? 'Booked' : 'Book Now'}
+{t("book")}
       </button>  : 
       
       <button
@@ -195,7 +196,7 @@ const {price,discount ,specialNote,
       
         className='btn-primary w-full mt-6 disabled:bg-gray-500 disabled:cursor-not-allowed'
       >
-   <Link href='/sign-up' >Sign Up</Link> 
+   <Link  href={`/${locale}/sign-up`} >{t("singUp")}</Link> 
       </button>
 }
   

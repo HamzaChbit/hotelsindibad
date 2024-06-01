@@ -1,0 +1,74 @@
+{
+    "IndexPage": {
+      "title": "BIENVENUE AU Hotel Sindibad Agadir",
+      "description": "un hôtel traditionnel situé dans la région souss d'agadir."
+    },
+    "Contact": {
+      "get":"Entrer en ",
+      "touche": "Contact",
+      "description": "Veuillez remplir le formulaire avec vos questions, commentaires et préoccupations, et nous vous répondrons immédiatement",
+      "info":"INFORMATIONS DE CONTACT",
+      "infoDec":"Vous avez des questions? Faites le nous savoir. Nous le clarifierons pour vous au mien.",
+      "phone":"TÉLÉPHONE",
+      "name":"Votre nom",
+      "error":"Ce champ est obligatoire"
+    },
+    "FeaturedRoom":{
+      "featured":"Chambre Recommandée",
+      "from":"À partir de",
+      "discount":"Réduction",
+      "more":"Plus de détails"
+    },
+  
+    "Navigation": {
+      "home": "Accueil",
+      "rooms":"Chambres"
+    },
+    "Search": {
+      "type": " Type de chambre :",
+      "search":" Recherche",
+      "all":"Tout",
+      "twin":"Chambre double",
+      "suite":"Suite",
+      "family":"Chambre Familiale",
+      "single":"Chambre Simple"
+    },
+    "Card":{
+      "room":"Chambre",
+      "button":"Réserver"
+    },
+    "BookNow":{
+      "checkIn":"Date d'arrivée",
+      "checkOut":"Date de départ",
+      "adults":"Adultes",
+      "children":"Enfants",
+      "total":"Prix total",
+      "book":"Réservez",
+      "singUp":"S'inscrire"
+    },
+    "NewsLetter":{
+      "description":"Situé à seulement 10 minutes de marche à travers le quartier commerçant de la plage d'Agadir, le New Farah Hotel possède une piscine extérieure, un café, un bar à chicha ainsi qu'un toit-terrasse avec vue sur la mer et les montagnes.",
+      "title":"TOUTES LES CHAMBRES D'HÔTES ONT UNE VUE ET DES INSTALLATIONS DE DÉTENTE",
+      "decOne":"Le Sindibad propose un excellent rapport qualité/prix avec des tarifs compétitifs et de nombreuses installations. L'établissement bénéficie d un emplacement idéal au cœur d'Agadir, dans le quartier historique et touristique de Talborjt. Dans les environs, vous trouverez 2 grandes places, des marchés, des restaurants, des cafés, des magasins locaux, une magnifique rue piétonne menant à la mer ainsi que de nombreuses boutiques, y compris de marques. Vous séjournerez à deux pas de 2 grands supermarchés, un Aswak Assalam et un Carrefour Market.",
+   
+      "get":"Entrer en Contact "
+    },
+    "pageRoom":{
+      "amenities":"Services Inclus",
+      "safety":"Safety And Hygiene",
+      "cleaning":"Nettoyage Quotidien",
+      "fire":"Extincteurs d'incendie",
+      "disinfections":"Désinfections et Stérilisations",
+      "smoke":"Détecteurs de Fumée",
+      "TV":"Téléviseur à écran plat",
+      "air":"Climatisation",
+      "bathroom":"Salle de bain privée"
+    },
+    "Footer": {
+      "copyright": "© 2024 Votre application. Tous droits réservés.",
+      "touch":"Entrer en contact",
+      "privacy":"Notre Engagement envers la Confidentialité",
+      "service":"Conditions d'utilisation",
+      "customer":"Assistance client"
+    }
+  }

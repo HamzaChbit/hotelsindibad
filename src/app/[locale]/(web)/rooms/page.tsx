@@ -8,6 +8,7 @@ import ScrollToTop from "react-scroll-to-top";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
+import { useLocale } from "next-intl";
 
 const Rooms = () => {
   const [roomTypeFilter, setRoomTypeFilter] = useState('');
@@ -34,32 +35,36 @@ const Rooms = () => {
 
   if (typeof data === "undefined" && !isLoading)
     throw new Error('Cannot fetch data')
+  const locale = useLocale()
 
-
-  const filterRooms = (rooms: Room[]) => {
+  const filterRooms = (rooms: Room[], locale: string) => {
 
     return rooms.filter(room => {
-
+  
       if (roomTypeFilter &&
         roomTypeFilter.toLowerCase() !== "all" &&
         room.type.toLowerCase() !== roomTypeFilter.toLowerCase()) {
         return false;
       }
-
-      if (searchQuery && !room.name.toLowerCase().includes(searchQuery.toLowerCase())) {
-        return false
+  
+      if (locale === "en") {
+        if (searchQuery && !room.name.en.toLowerCase().includes(searchQuery.toLowerCase())) {
+          return false;
+        }
+      } else if (locale === "fr") {
+        if (searchQuery && !room.name.fr.toLowerCase().includes(searchQuery.toLowerCase())) {
+          return false;
+        }
       }
-      return true
-
-
-
-
-    })
+  
+      return true;
+    });
   }
+  
 
 
 
-  const filteredRooms = filterRooms(data || []);
+  const filteredRooms = filterRooms(data || [],locale);
 
 
 
@@ -67,9 +72,7 @@ const Rooms = () => {
   return (
     <div className='  mx-auto pt-10 mt-20 flex items-center justify-center flex-col h-full container '>
 
-    <div>
-
-    </div>
+  
    <SearchTow
         roomTypeFilter={roomTypeFilter}
         searchQuery={searchQuery}
