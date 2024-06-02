@@ -15,9 +15,9 @@ import { getMessages } from "next-intl/server";
 
 
 export const metadata: Metadata = {
-  title: 'Sindibad Hotel',
+  title: 'Hotel Sindibad Agadir',
   description: 'Sindibad offers excellent value for money, with competitive prices and a wide range of amenities. The hotel is strategically located in the heart of Agadir, in the historic and touristy neighborhood of Talborjt. It is surrounded by two large squares, a beautiful pedestrian street leading to the sea, ',
-  keywords:["Sindibad Hotel","Sindibad ","sindibad","Agadir","best hotel","hotel","Hotel"],
+  keywords:["Sindibad Hotel","Sindibad ","sindibad","Agadir","best hotel","hotel","Hotel","Hotel Sindibad Agadir"],
   authors:[{name:"Hotel Sindibad"}],
   creator:"Hotel Sindibad",
   publisher:"Hotel Sindibad",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card:"summary_large_image"
         },
   openGraph: {
-    title: 'Hotel Sindibad',
+    title: 'Hotel Sindibad Agadir',
     description: 'Sindibad offers excellent value for money, with competitive prices and a wide range of amenities...',
     url: "https://hotelsindibad.vercel.app/",
     siteName: "Hotel Sindibad",
@@ -51,9 +51,9 @@ export default async function  RootLayout({
     <html lang={locale} >
        <head>
     
-         <meta property="og:title" content='Sindibad Hotel' />
+         <meta property="og:title" content='Hotel Sindibad Agadir' />
         <meta property="og:description" content='Sindibad offers excellent value for money, with competitive prices and a wide range of amenities. The hotel is strategically located in the heart of Agadir, in the historic and touristy neighborhood of Talborjt. It is surrounded by two large squares, a beautiful pedestrian street leading to the sea, ' />
-            <meta name="robots" content="HOTEL, Sindibad, Sindibad, Hotel Sindibad, Hotel Agadir" />
+            <meta name="robots" content="HOTEL, Sindibad, Sindibad, Hotel Sindibad, Hotel Agadir,Hotel Sindibad Agadir" />
         <meta property="og:url" content={'https://hotelsindibad.vercel.app/'} />
       </head>
       <body className={poppins.className}>

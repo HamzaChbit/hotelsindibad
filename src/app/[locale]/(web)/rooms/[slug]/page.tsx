@@ -57,8 +57,9 @@ const RoomDetails = (props: { params: { slug: string } }) => {
     if (checkinDate > checkoutDate)
       return toast.error("Please choose a valid checkin period");
 
-    if (!/^\d{8,15}$/.test(telephone))
-      return toast.error("Please enter a valid telephone number");
+    if (!(telephone.length === 9 || telephone.length === 13 || telephone.length === 12 || telephone.length === 10 || telephone.length === 11 || telephone.length === 8 || telephone.length === 14 || telephone.length === 15))
+      return toast.error('Please enter a valid telephone number');
+
 
     const numberOfDays = calcNumDays();
 
