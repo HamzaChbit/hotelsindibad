@@ -2,6 +2,7 @@
 import { Dispatch, FC, SetStateAction } from "react"
 import { Booking } from "@/models/booking"
 import { useRouter } from "next/navigation"
+import { useLocale } from "next-intl"
 
 
 type Props = {
@@ -12,6 +13,7 @@ type Props = {
 
 const Table:FC<Props> = ({bookingDetails}) => {
   const router = useRouter();
+  const locale = useLocale()
   return (
     <div className="overflow-x-auto max-w-[340px] rounded-lg mx-auto md:max-w-full shadow-md sm:rounded-lg">
       <table className="w-full text-sm text-left text-gray-500" >
@@ -31,10 +33,10 @@ const Table:FC<Props> = ({bookingDetails}) => {
             <tr className="bg-white border-b hover:bg-gray-50" key={booking._id}>
               <th  className='px-6 underline text-blue-600 cursor-pointer py-4 font-medium whitespace-nowrap'
                onClick={() =>
-                  router.push(`/rooms/${booking.hotelRoom.slug.current}`)
+                  router.push(`/${locale}/rooms/${booking.hotelRoom.slug.current}`)
                 }>
+{locale == "en" ? booking.hotelRoom.name.en : booking.hotelRoom.name.fr    }
 
-   {booking.hotelRoom.name}
               </th>
               <td className='px-6 py-4'>{booking.hotelRoom.price}</td>
               <td className='px-6 py-4'>{booking.totalPrice}</td>

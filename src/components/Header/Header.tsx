@@ -171,7 +171,7 @@ const {scrollYProgress}=useScroll()
           />
             <li className='flex items-center text-white' >
       {userId ? (
-              <Link href={`/${locale}/users/${userId}`   }    title="Visit Profile" >
+              <Link href={`/${locale}/users/${userId}`   }   onClick={() => setShowMenu(false)}  title="Visit Profile" >
                 {user.imageUrl ? (
                   <div className='w-10 h-10 rounded-full overflow-hidden'>
                     <Image
@@ -188,7 +188,7 @@ const {scrollYProgress}=useScroll()
               </Link>
             ) : (
               <Link href={`/${locale}/sign-up`}
-              
+              onClick={() => setShowMenu(false)}
               aria-label='Sign Up'>
                 <FaUserCircle className='cursor-pointer ' color='black' />
               </Link>

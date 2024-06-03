@@ -2,7 +2,11 @@ export type Booking = {
     _id: string;
     hotelRoom: {
       _id: string;
-      name: string;
+      name: {
+        en: string;
+        fr: string;
+
+      };
       slug: { current: string };
       price: number;
     };
