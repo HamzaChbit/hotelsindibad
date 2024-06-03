@@ -21,7 +21,7 @@ export default function LocalSwitcher() {
      
       <select
         defaultValue={localActive}
-        className='bg-transparent text-white  outline-none rounded-lg border-white '
+        className='bg-transparent md:text-white text-black  outline-none rounded-lg md:border-white border-black '
         onChange={onSelectChange}
         disabled={isPending}
       >

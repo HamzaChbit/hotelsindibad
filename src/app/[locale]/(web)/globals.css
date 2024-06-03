@@ -32,3 +32,16 @@
   z-index: 1; /* Ensure it's above any other elements that might obscure the ScrollToTop */
 }
 
+
+::-webkit-scrollbar{
+  width: 15px;
+}
+
+::-webkit-scrollbar-track{
+  background: #ffff;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#016de4;
+  
+}
