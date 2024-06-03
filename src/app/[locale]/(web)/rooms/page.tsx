@@ -9,6 +9,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 import { useLocale } from "next-intl";
+import Aos from "aos";
 
 const Rooms = () => {
   const [roomTypeFilter, setRoomTypeFilter] = useState('');
@@ -62,7 +63,9 @@ const Rooms = () => {
   }
   
 
-
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
   const filteredRooms = filterRooms(data || [],locale);
 
@@ -70,7 +73,7 @@ const Rooms = () => {
 
 
   return (
-    <div className='  mx-auto pt-10 mt-20 flex items-center justify-center flex-col h-full container '>
+    <div className='  mx-auto pt-10 mt-20 flex items-center justify-center flex-col h-full container ' data-aos="fade-up"  data-aos-duration="1000">
 
   
    <SearchTow
@@ -84,11 +87,13 @@ const Rooms = () => {
 
      
       {filteredRooms.length !== 0 ?
-      <div className=" flex flex-col w-[80%] ">
-          <div className='flex flex-col  md:px-10 px-2  py-8' data-aos="fade-up"  data-aos-duration="1000">
+      <div className=" flex flex-col w-[80%] " >
+          <div className='flex flex-col  md:px-10 px-2  py-8' >
           {filteredRooms.map(room => (
             <RoomCard key={room._id} room={room} />
           ))}
+
+
         </div>
       </div>
       

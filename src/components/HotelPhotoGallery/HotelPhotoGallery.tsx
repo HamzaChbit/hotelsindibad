@@ -2,7 +2,7 @@
 
 import { Image as ImageType } from "@/models/room";
 import Image from "next/image";
-import { FC, useState } from "react";
+import { FC,  useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 
@@ -34,10 +34,7 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
   const remainingPhotosCount = totalPhotos - maximumVisiblePhotos;
 
   return (
-    <div className="container mx-auto"  data-aos="fade-down"
-    data-aos-easing="linear"
-   
-    data-aos-duration="1000">
+    <div className="container mx-auto"  >
       <div className="grid md:grid-cols-2 relative gap-5 px-3 mt-20">
         <div className="h-[540px] relative rounded-2xl overflow-hidden">
           <div className="hidden md:flex justify-center items-center w-full h-full">
