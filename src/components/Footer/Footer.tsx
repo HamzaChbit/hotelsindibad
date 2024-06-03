@@ -11,7 +11,7 @@ const Footer = () => {
   const locale = useLocale()
   return (
     <footer className='mt-16 '>
-      <div className='container mx-auto px-4'>
+      <div className='container mx-auto px-4' data-aos="fade-down"  data-aos-duration="1500">
         <Link href='/' className='font-black text-tertiary-dark' title='Home'>
           Hotel
         </Link>

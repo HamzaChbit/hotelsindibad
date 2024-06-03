@@ -22,7 +22,7 @@ export default  async function Home() {
     <>
  {
     <Loading/> ?  <>
-    <div className="  bg-no-repeat bg-cover bg-center mb-5 bg-opacity-100 bg-contrast-50 "style={{ backgroundImage: `url(${fetch.coverImage})` }}>
+    <div className="  bg-no-repeat bg-cover bg-center mb-5 bg-opacity-100 bg-contrast-50 "style={{ backgroundImage: `url(${fetch.coverImage})` }}   data-aos="fade-down"  data-aos-duration="1500">
      
      
   

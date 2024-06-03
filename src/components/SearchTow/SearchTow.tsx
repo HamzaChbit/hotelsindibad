@@ -33,7 +33,7 @@ const handleFilterClick = () => {
 
 
   return (
-    <section  className=' mt-20 rounded-lg mb-5 w-[80%]  ' >
+    <section  className=' mt-20 rounded-lg mb-5 w-[80%]  'data-aos="fade-down"  data-aos-duration="1000" >
         <div className='flex gap-4 flex-wrap justify-between items-center   md:px-10 px-2  py-8 rounded-lg border-2 border-tertiary-dark ' >
             <div className='w-full md:1/3 lg:w-auto mb-4 md:mb-0' >
             <label  htmlFor="roomTypeSelect" className='block text-xl font-medium mb-2 text-dark'>

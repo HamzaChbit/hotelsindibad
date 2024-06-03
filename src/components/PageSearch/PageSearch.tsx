@@ -8,7 +8,7 @@ const PageSearch = () => {
     const [roomTypeFilter,setRoomTypeFilter] = useState('')
     const [searchQuery,setSearchQuery] = useState('')
   return (
-    <>
+    <div data-aos="fade-up"  data-aos-duration="2000">
     
     <Search    roomTypeFilter={roomTypeFilter} 
         setRoomTypeFilter={setRoomTypeFilter}
@@ -16,7 +16,7 @@ const PageSearch = () => {
         searchQuery={searchQuery}
     
     />
-    </>
+    </div>
   )
 }
 

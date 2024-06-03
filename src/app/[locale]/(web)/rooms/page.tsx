@@ -80,10 +80,12 @@ const Rooms = () => {
         setSearchQuery={setSearchQuery}
       />
 
+
+
      
       {filteredRooms.length !== 0 ?
       <div className=" flex flex-col w-[80%] ">
-          <div className='flex flex-col  md:px-10 px-2  py-8'>
+          <div className='flex flex-col  md:px-10 px-2  py-8' data-aos="fade-up"  data-aos-duration="1000">
           {filteredRooms.map(room => (
             <RoomCard key={room._id} room={room} />
           ))}

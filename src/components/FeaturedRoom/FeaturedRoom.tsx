@@ -26,7 +26,9 @@ const FeaturedRoom: FC<Props> = props => {
   return (
     <section className='flex md:flex-row flex-col px-4 py-10 items-center gap-12 container mx-auto'  
  >
-      <div className='md:grid gap-8 grid-cols-1 ' data-aos="fade-up"
+      <div className='md:grid gap-8 grid-cols-1 ' data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine"
      >
         <div className='rounded-2xl overflow-hidden h-48 mb-4 md:mb-0' >
           <Image
@@ -58,7 +60,9 @@ const FeaturedRoom: FC<Props> = props => {
         </div>
       </div>
 
-      <div className='md:py-10 md:w-1/2 text-left'data-aos="fade-up"
+      <div className='md:py-10 md:w-1/2 text-left'data-aos="fade-left"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine"
   
    >
         <h2 className='font-heading mb-12'>{t('featured')}</h2>

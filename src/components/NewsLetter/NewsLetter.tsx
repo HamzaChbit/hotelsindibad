@@ -9,7 +9,7 @@ const NewsLetter = () => {
   const locale = useLocale()
     return (
     
-       <section data-aos="fade-up"> 
+       <section data-aos="fade-up"  data-aos-duration="3000"> 
   <div className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
     <div className="grid grid-cols-1  lg:grid-cols-2">
       <div className="relative z-20 lg:py-16"  data-aos="fade-up"

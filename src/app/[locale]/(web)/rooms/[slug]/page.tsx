@@ -102,7 +102,8 @@ const RoomDetails = (props: { params: { slug: string } }) => {
       <HotelPhotoGallery photos={room.images} />
       <div className="container mx-auto mt-20">
         <div className="md:grid md:grid-cols-12 gap-10 px-3">
-          <div className="md:col-span-8 md:w-full">
+          <div className="md:col-span-8 md:w-full"    data-aos="fade-up"
+ data-aos-duration="1000">
             <div>
               <h2 className="font-bold text-left text-lg md:text-2xl text-tertiary-dark">
                 {locale == "en" ? room.name.en : room.name.fr} 
@@ -191,7 +192,8 @@ const RoomDetails = (props: { params: { slug: string } }) => {
               </div>
             </div>
           </div>
-          <div className="md:col-span-4 rounded-xl shadow-lg dark:shadow-lg dark:shadow-white sticky top-10 h-fit overflow-auto">
+          <div className="md:col-span-4 rounded-xl shadow-lg dark:shadow-lg dark:shadow-white sticky top-10 h-fit overflow-auto" data-aos="fade-up" data-aos-duration="1000"
+    >
             <BookRoomCta
               discount={room.discount}
               price={room.price}
