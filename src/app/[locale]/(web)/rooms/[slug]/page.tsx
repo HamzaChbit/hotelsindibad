@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useSWR from "swr";
 import LoadingSpinner from "../../loading";
 import { LiaFireExtinguisherSolid } from "react-icons/lia";
@@ -17,7 +17,6 @@ import { getRoom } from "@/libs/apis";
 import BookRoomCta from "@/components/BookRoomCta/BookRoomCta";
 import HotelPhotoGallery from "@/components/HotelPhotoGallery/HotelPhotoGallery";
 import { useLocale, useTranslations } from "next-intl";
-import Aos from "aos";
 
 const RoomDetails = (props: { params: { slug: string } }) => {
   const {
@@ -97,9 +96,7 @@ const RoomDetails = (props: { params: { slug: string } }) => {
     const noOfDays = Math.ceil(timeDiff / (24 * 60 * 60 * 1000));
     return noOfDays;
   };
-  useEffect(() => {
-    Aos.init();
-  }, []);
+
   return (
     <div className="mt-20 pt-1">
       <HotelPhotoGallery photos={room.images} />
