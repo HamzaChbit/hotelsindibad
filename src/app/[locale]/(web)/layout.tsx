@@ -54,14 +54,16 @@ export default async function  RootLayout({
          <meta property="og:title" content='Hotel Sindibad Agadir' />
         <meta property="og:description" content='Sindibad offers excellent value for money, with competitive prices and a wide range of amenities. The hotel is strategically located in the heart of Agadir, in the historic and touristy neighborhood of Talborjt. It is surrounded by two large squares, a beautiful pedestrian street leading to the sea, ' />
             <meta name="robots" content="HOTEL, Sindibad,sindibad.ma, Sindibad, Hotel Sindibad, Hotel Agadir,Hotel Sindibad Agadir" />
-            <meta property="og:image" content="<generated>" />
-<meta property="og:image:type" content="<generated>" />
-<meta property="og:image:width" content="<generated>" />
-<meta property="og:image:height" content="<generated>" />
-<meta name="twitter:image" content="<generated>" />
-<meta name="twitter:image:type" content="<generated>" />
-<meta name="twitter:image:width" content="<generated>" />
-<meta name="twitter:image:height" content="<generated>" />
+            <meta property="og:image" content="/images/1.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="/images/1.png" />
+<meta name="twitter:image:type" content="image/png" />
+<meta name="twitter:image:width" content="1200" />
+<meta name="twitter:image:height" content="630" />
+
+
         <meta property="og:url" content={'https://hotelsindibad.ma'} />
       </head>
       <body className={poppins.className}>
