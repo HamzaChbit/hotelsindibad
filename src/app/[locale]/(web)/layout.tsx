@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Hotel Sindibad Agadir',
     description: 'Sindibad offers excellent value for money, with competitive prices and a wide range of amenities...',
-    url: "https://hotelsindibad.vercel.app/",
+    url: "https://hotelsindibad.ma",
     siteName: "Hotel Sindibad",
     type: "website",
   },
