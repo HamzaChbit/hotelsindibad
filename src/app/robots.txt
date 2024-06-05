@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+Disallow: /studio/
+Sitemap: https://hotelsindibad.ma/sitemap.xml
