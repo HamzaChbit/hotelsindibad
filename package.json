@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "postbuild": "next-sitemap",
     "lint": "next lint"
   },
   "dependencies": {
@@ -25,6 +26,7 @@
     "next-auth-sanity": "^1.5.3",
     "next-intl": "^3.14.1",
     "next-sanity": "^8.5.1",
+    "next-sitemap": "^4.2.3",
     "phosphor-icons": "^1.4.2",
     "react": "^18",
     "react-chartjs-2": "^5.2.0",
