@@ -2,12 +2,7 @@ import { MetadataRoute } from 'next'
  
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    {
-      url: 'https://hotelsindibad.ma',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 1,
-    },
+  
     {
       url: 'https://hotelsindibad.ma/en',
       lastModified: new Date(),
