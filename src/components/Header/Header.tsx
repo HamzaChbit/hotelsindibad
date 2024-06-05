@@ -93,7 +93,7 @@ const {scrollYProgress}=useScroll()
       <div className='container mx-auto flex flex-wrap md:flex-nowrap items-center justify-between '>
 
       <div  className='flex items-center w-full  justify-between md:justify-normal  ' >
-      <Link href="/" passHref className="md:font-black font-semibold  text-tertiary-dark" title="Hotel Sindibad">
+      <Link href="/"  className="font-semibold  text-tertiary-dark" title="Hotel">
       
         hOTEL
      
