@@ -68,13 +68,13 @@ const handleFilterClick = () => {
             onChange={handleSearchQueryChange}
           />
         </div>
-        <button
+        {/* <button
           className='px-6 md:px-[50px] lg:px-[72px] py-2 mb-4 md:mb-0 md:py-5 bg-tertiary-dark rounded-lg md:rounded-2xl shadow-sm shadow-tertiary-dark text-white font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all;'
           type='button'
          onClick={handleFilterClick}
         >
          {t('search')}
-        </button>
+        </button> */}
 
         </div>
 

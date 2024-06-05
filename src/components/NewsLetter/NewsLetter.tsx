@@ -27,13 +27,13 @@ const NewsLetter = () => {
       <div className="relative flex  bg-gray-100"
     >
         <span
-          className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"
+          className="  hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"
         ></span>
 
         <div className="p-8 sm:p-16 lg:p-24 flex justify-evenly flex-col " data-aos="fade-up">
           <div>
                 <h2 className="text-3xl font-bold sm:text-3xl tracking-wide ">
-          <span  className="text-tertiary-dark border-b-2 border-black">HOTEL</span>  Sindibad AGADIR         </h2>
+          <span  className="text-tertiary-dark ">HOTEL</span>  Sindibad AGADIR         </h2>
 
 
           <p className="mt-4 text-gray-600">
