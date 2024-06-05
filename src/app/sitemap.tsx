@@ -1,36 +1,43 @@
-
-
-export default function sitemap() {
+import { MetadataRoute } from 'next'
+ 
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
+  
     {
-      url: 'https://hotelsindibad.ma',
+      url: 'https://hotelsindibad.ma/en',
       lastModified: new Date(),
-      alternates: {
-        languages: {
-          en: 'https://hotelsindibad.ma/en',
-          fr: 'https://hotelsindibad.ma/fr',
-        },
-      },
+      changeFrequency: 'yearly',
+      priority: 1,
     },
     {
-      url: 'https://hotelsindibad.ma/about',
+      url: 'https://hotelsindibad.ma/fr',
       lastModified: new Date(),
-      alternates: {
-        languages: {
-          en: 'https://hotelsindibad.ma/en/about',
-          fr: 'https://hotelsindibad.ma/fr/about',
-        },
-      },
+      changeFrequency: 'yearly',
+      priority: 1,
     },
     {
-      url: 'https://hotelsindibad.ma/blog',
+      url: 'https://hotelsindibad.ma/en/rooms',
       lastModified: new Date(),
-      alternates: {
-        languages: {
-          en: 'https://hotelsindibad.ma/en/blog',
-          fr: 'https://hotelsindibad.ma/fr/blog',
-        },
-      },
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://hotelsindibad.ma/fr/rooms',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://hotelsindibad.ma/fr/contact',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
+    {
+      url: 'https://hotelsindibad.ma/en/contact',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.5,
     },
   ]
 }
