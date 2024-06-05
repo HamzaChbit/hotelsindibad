@@ -2,42 +2,35 @@ import { MetadataRoute } from 'next'
  
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-  
     {
-      url: 'https://hotelsindibad.ma/en',
+      url: 'https://sindibad.ma',
       lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 1,
+      alternates: {
+        languages: {
+          en: 'https://sindibad.ma/en',
+          fr: 'https://sindibad.ma/fr',
+        },
+      },
     },
     {
-      url: 'https://hotelsindibad.ma/fr',
+      url: 'https://sindibad.ma/rooms',
       lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 1,
+      alternates: {
+        languages: {
+          en: 'https://sindibad.ma/en/rooms',
+          fr: 'https://sindibad.ma/fr/rooms',
+        },
+      },
     },
     {
-      url: 'https://hotelsindibad.ma/en/rooms',
+      url: 'https://sindibad.ma/contact',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://hotelsindibad.ma/fr/rooms',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://hotelsindibad.ma/fr/contact',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://hotelsindibad.ma/en/contact',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
+      alternates: {
+        languages: {
+          en: 'https://sindibad.ma/en/contact',
+          fr: 'https://sindibad.ma/fr/contact',
+        },
+      },
     },
   ]
 }

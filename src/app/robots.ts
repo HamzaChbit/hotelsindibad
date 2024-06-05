@@ -9,5 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       
     },
     sitemap: 'https://hotelsindibad.ma/sitemap.xml',
+   
   }
 }
