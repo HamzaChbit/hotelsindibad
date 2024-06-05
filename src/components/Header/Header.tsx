@@ -93,11 +93,11 @@ const {scrollYProgress}=useScroll()
       <div className='container mx-auto flex flex-wrap md:flex-nowrap items-center justify-between '>
 
       <div  className='flex items-center w-full  justify-between md:justify-normal  ' >
-      <Link href="/"  className="font-semibold  text-tertiary-dark" title="Hotel">
-      
-        hOTEL
-     
-    </Link>
+      <Link href="/" passHref>
+        <a className="font-semibold text-tertiary-dark" title="Hotel">
+          hOTEL
+        </a>
+      </Link>
       <ul className='flex items-center ml-5' >
       <li className='flex items-center' >
       {userId ? (
