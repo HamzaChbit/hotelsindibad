@@ -119,10 +119,16 @@ export const metadata: Metadata = {
     "évasion hivernale",
     "expérience inoubliable"
 ],
+icons:{
+  icon:['/favicon.ico?v=1'],
+  apple:['/apple-touch-icon.png?v=4'],
+  shortcut:['/apple-touch-icon.png']
 
+},
   authors:[{name:"Hotel Sindibad"}],
   creator:"Hotel Sindibad",
   publisher:"Hotel Sindibad",
+  manifest:'/site.webmanifest',
   metadataBase: new URL("https://hotelsindibad.ma"),
   twitter:{
     card:"summary_large_image"
@@ -134,6 +140,7 @@ export const metadata: Metadata = {
     siteName: "Hotel Sindibad",
     type: "website",
   },
+ 
 };
 const poppins = Poppins({
   subsets: ['latin'],
