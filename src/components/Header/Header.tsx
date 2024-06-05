@@ -93,7 +93,7 @@ const {scrollYProgress}=useScroll()
       <div className='container mx-auto flex flex-wrap md:flex-nowrap items-center justify-between '>
 
       <div  className='flex items-center w-full  justify-between md:justify-normal  ' >
-      <Link href="/" className='md:font-black font-semibold text-tertiary-dark ' >
+      <Link href="/" className='md:font-black font-semibold text-tertiary-dark ' title='hotel'>
         hOTEL
       </Link>
 
@@ -139,20 +139,27 @@ const {scrollYProgress}=useScroll()
 
 </div>
     </div>
-<div className='hidden md:block'>
-    <ul  className='flex items-center justify-around w-full md:w-1/3  mt-4 text-white font-semibold  ' >
-        <li className='hover:-translate-y-2 duration-500 transition-all hover:text-tertiary-dark   px-2'>
-        <Link href={`/`} title='Home'>{t("home")}</Link>
-          </li>
-          <li className='hover:-translate-y-2 duration-500 transition-all px-2 hover:text-tertiary-dark'>
-          <Link  href={`/${locale}/rooms`}    title="Rooms">{t("rooms")}</Link>
-        </li>
-        <li className='hover:-translate-y-2 duration-500 transition-all px-2 hover:text-tertiary-dark'>
-          <Link href={`/${locale}/contact`}   title="Contact">Contact</Link>
-        </li>
+<div className='hidden md:block '>
+    <div  className='flex items-center justify-around w-full md:w-1/3  mt-4 text-white font-semibold  ' >
+   
 
   
-        </ul>
+        <Link href={`/`} className='hover:-translate-y-2 duration-500 transition-all px-2 hover:text-tertiary-dark' title='Home'>{t("home")}</Link>
+     
+     
+          <Link  href={`/${locale}/rooms`}  className='hover:-translate-y-2 duration-500 transition-all px-2 hover:text-tertiary-dark'  title="Rooms">{t("rooms")}</Link>
+    
+    
+          <Link href={`/${locale}/contact`} className='hover:-translate-y-2 duration-500 transition-all px-2 hover:text-tertiary-dark'  title="Contact">Contact</Link>
+      
+  
+      <LocalSwitcher />
+ 
+            
+       
+    
+  
+        </div>
 </div>
       
 <AnimatePresence>
@@ -238,10 +245,7 @@ const {scrollYProgress}=useScroll()
 
 
 
-        <div className='hidden md:block'>
-    <LocalSwitcher />
-        </div>
-    
+   
 
        
 

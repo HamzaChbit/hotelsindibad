@@ -17,7 +17,7 @@ export default function LocalSwitcher() {
  
 
   return (
-    <div className='rounded-3xl border-none bg-transparent  h-6 text-2xl font-semibold '>
+    <div className='rounded-3xl border-none bg-transparent   text-2xl font-semibold '>
      
       <select
         defaultValue={localActive}
