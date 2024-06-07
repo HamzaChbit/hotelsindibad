@@ -19,7 +19,7 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        'custom': "url('/custom.jpg')",
+        'custom': "url('/custom500.jpg')",
         'custom-image': "url('https://lh5.googleusercontent.com/p/AF1QipOVxjA9DWgJELYrId6IlMnyE8TZHEczK-b1JZBc=w203-h135-k-no')",
         "bg":"url('/images/11.jpg')"
       },
