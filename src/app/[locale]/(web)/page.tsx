@@ -1,4 +1,4 @@
-addimport FeaturedRoom from "@/components/FeaturedRoom/FeaturedRoom";
+import FeaturedRoom from "@/components/FeaturedRoom/FeaturedRoom";
 import { Gallery } from "@/components/Gallery/Gallery";
 import ClientComponent from "@/components/HeroSection/ClientComponent";
 
