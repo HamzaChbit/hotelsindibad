@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
     <div className='container  mt-20 mx-auto  px-2 md:px-4 '>
 <div  className='flex flex-col h-full w-full mx-2  items-center ' >
    <div className='flex flex-col  mt-10  justify-between   items-center gap-x-10 md:flex-row h-full ' >
-        <div className='flex flex-col gap-y-5   w-[80%]  md:w-[40%]' data-aos="fade-up"  data-aos-duration="3000">
+        <div className='flex flex-col gap-y-5   w-[80%]  md:w-[40%]' >
         <h1 className='py-4 text- text-4xl font-bold tracking-wide'><span className='text-tertiary-dark'>{t("get")} </span>
             {t("touche")}</h1>
           <p className='text-xl mb-8  maw-w-[40%] ' >{t("description")}</p>
@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
 
 
 
-        <form ref={form} onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-[80%] md:w-[40%] ' data-aos="fade-up"  data-aos-duration="3000">
+        <form ref={form} onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-[80%] md:w-[40%] ' >
           <div className='flex flex-col md:flex-row justify-between gap-x-10 py-8'>
             <div className='flex flex-col w-full'>
               <label className='py-3 text-green text-2xl font-medium'>{t("name")} </label>
@@ -147,7 +147,7 @@ const Contact: React.FC = () => {
 
 
       </div>
-      <div className='flex flex-col  mt-10  justify-between  md:flex-row h-full w-[80%] md:w-full   ' data-aos="fade-up"  data-aos-duration="3000">
+      <div className='flex flex-col  mt-10  justify-between  md:flex-row h-full w-[80%] md:w-full   '>
     
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d860.1007257278426!2d-9.593547730446208!3d30.424678454849946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b6f4f9f90485%3A0x2b38000c5827a9b1!2sSindibad%20Hotel!5e0!3m2!1sen!2sma!4v1716832263480!5m2!1sen!2sma" className='h-60  w-full ' >
 
