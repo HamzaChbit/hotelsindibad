@@ -34,7 +34,7 @@ const Footer = () => {
 
           <div className='flex-1 md:text-right'>
         
-          <Link href={`/${locale}/contact`} className='pb-4 hover:text-black' title='Rooms'>{t("touch")}</Link>
+          <Link href={`/${locale}/contact`} className='pb-4 hover:text-black' title='Rooms'>{t("getintouch")}</Link>
             <p className='pb-4'>{t("privacy")}</p>
      
           </div>

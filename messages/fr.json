@@ -66,7 +66,7 @@
     },
     "Footer": {
       "copyright": "© 2024 Votre application. Tous droits réservés.",
-      "touch":"Entrer en contact",
+      "getintouch":"Entrer en contact",
       "privacy":"Notre Engagement envers la Confidentialité",
       "service":"Conditions d'utilisation",
       "customer":"Assistance client"
