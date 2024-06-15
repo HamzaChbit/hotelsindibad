@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Poppins } from 'next/font/google';
-
+import Head from 'next/head'
 import { ClerkProvider } from "@clerk/nextjs";
 import 'aos/dist/aos.css';
 import ThemeProvider from "@/components/ThemeProvider/ThemeProvider";
@@ -158,14 +158,14 @@ export default async function  RootLayout({
   return (  
      <ClerkProvider>
     <html lang={locale} >
-       <head>
+    <Head>
     
          <meta property="og:title" content='Hotel Sindibad Agadir' />
         <meta property="og:description" content='Sindibad offers excellent value for money, with competitive prices and a wide range of amenities. The hotel is strategically located in the heart of Agadir, in the historic and touristy neighborhood of Talborjt. It is surrounded by two large squares, a beautiful pedestrian street leading to the sea, ' />
      
             <meta name="robots" content="index, follow, Sindibad, sindibad.ma, HOTEL, Agadir, best hotel in Agadir, luxury accommodation, beach resort, vacation destination, Morocco, book now, beachfront hotel, Sindibad Hotel, holiday experience, travel, explore, discover, family-friendly, activities, entertainment" />
             <meta name="google-site-verification" content="x3CZssCkoEaQQ17NXPwpD86pRdbdYi8j-95Ey2qMpyg" />
-            {/* <meta property="og:image" content="/images/1.png" />
+            <meta property="og:image" content="/images/1.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -177,11 +177,11 @@ export default async function  RootLayout({
 <meta name="twitter:image" content="/images/1.png" />
 <meta name="twitter:image:type" content="image/png" />
 <meta name="twitter:image:width" content="1200" />
-<meta name="twitter:image:height" content="630" /> */}
+<meta name="twitter:image:height" content="630" />
 
 
         <meta property="og:url" content={'https://hotelsindibad.ma'} />
-      </head>
+      </Head>
       <body className={poppins.className}>
       <NextIntlClientProvider messages={messages}>
         
