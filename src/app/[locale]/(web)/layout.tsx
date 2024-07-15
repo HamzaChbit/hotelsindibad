@@ -162,7 +162,7 @@ export default async function  RootLayout({
     
          <meta property="og:title" content='Hotel Sindibad Agadir' />
         <meta property="og:description" content='Sindibad offers excellent value for money, with competitive prices and a wide range of amenities. The hotel is strategically located in the heart of Agadir, in the historic and touristy neighborhood of Talborjt. It is surrounded by two large squares, a beautiful pedestrian street leading to the sea, ' />
-     
+        <meta name="msvalidate.01" content="A42745912D5B69F1E1F1C11B485912B2" />
             <meta name="robots" content="index, follow, Sindibad, sindibad.ma, HOTEL, Agadir, best hotel in Agadir, luxury accommodation, beach resort, vacation destination, Morocco, book now, beachfront hotel, Sindibad Hotel, holiday experience, travel, explore, discover, family-friendly, activities, entertainment" />
             <meta name="google-site-verification" content="x3CZssCkoEaQQ17NXPwpD86pRdbdYi8j-95Ey2qMpyg" />
             <meta property="og:image" content="/images/1.png" />
