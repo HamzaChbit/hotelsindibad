@@ -35,6 +35,7 @@ const Contact: React.FC = () => {
     emailjs.send('service_pdiicrc', 'template_rgppavu', {
       to_name: 'Hotel Agadir', // You can dynamically set this if needed
       from_name: data.user_name,
+      from_email:data.user_email,
       message: data.message,
     }, 'oSY2rpcj8zlnFjDD-')
       .then((result) => {
