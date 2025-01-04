@@ -32,12 +32,12 @@ const Contact: React.FC = () => {
       return;
     }
 
-    emailjs.send('service_pdiicrc', 'template_rgppavu', {
+    emailjs.send('service_sih28ci', 'template_ii3qgpu', {
       to_name: 'Hotel Agadir', // You can dynamically set this if needed
       from_name: data.user_name,
-      user_email:data.user_email,
+      from_email:data.user_email,
       message: data.message,
-    }, 'oSY2rpcj8zlnFjDD-')
+    }, '26G-CzIj9AAFWGOvA')
       .then((result) => {
         console.log(result.text);
         toast.success("Message sent!");

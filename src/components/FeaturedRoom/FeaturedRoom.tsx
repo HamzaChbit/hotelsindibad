@@ -77,14 +77,15 @@ const FeaturedRoom: FC<Props> = props => {
             </div>
 
 
-            { featuredRoom.discount === 0 ? "":
-                 <div className='flex gap-3 flex-col items-center justify-center mr-4'>
-              <p className='text-xs lg:text-xl text-center'>{t('discount')}</p>
-              <p className='md:font-bold flex font-medium text-lg xl:text-5xl'>
-                $ {featuredRoom.discount}
-              </p>
-            </div>
-            }
+            {featuredRoom.discount && (
+  <div className='flex gap-3 flex-col items-center justify-center mr-4'>
+    <p className='text-xs lg:text-xl text-center'>{t('discount')}</p>
+    <p className='md:font-bold flex font-medium text-lg xl:text-5xl'>
+      $ {featuredRoom.discount}
+    </p>
+  </div>
+)}
+
          
           </div>
 

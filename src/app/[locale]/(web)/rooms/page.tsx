@@ -4,7 +4,6 @@ import RoomCard from "@/components/RoomCard/RoomCard";
 import SearchTow from "@/components/SearchTow/SearchTow";
 import { getRooms } from "@/libs/apis";
 import { Room } from "@/models/room";
-import ScrollToTop from "react-scroll-to-top";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
@@ -140,7 +139,7 @@ const Rooms = () => {
 
 
 
-      <ScrollToTop smooth className='flex justify-center items-center ' color='blue' />
+    
     </div>
   );
 

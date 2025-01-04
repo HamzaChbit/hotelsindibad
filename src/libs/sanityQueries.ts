@@ -50,7 +50,7 @@ export const getbgQuery = groq`*[_type == "hotelToom"][0] {
     name,
 }`;
 
-export const getUserBookingsQuery = groq`*[_type == 'booking' && userId == $userId]  {
+export const getUserBookingsQuery = groq`*[_type == 'booking']  {
     _id,
     hotelRoom -> {
         _id,
@@ -61,19 +61,11 @@ export const getUserBookingsQuery = groq`*[_type == 'booking' && userId == $user
     checkinDate,
     checkoutDate,
     telephone,
+    email,
     numberOfDays,
     adults,
     children,
     totalPrice,
-    user,
-    userId,
     discount
 }`;
 
-export const getUserDataQuery = groq`*[_type == 'booking' && _id == $userId][0] {
-    _id,
-    name,
-    email,
-  _createdAt,
-    image,
-}`;

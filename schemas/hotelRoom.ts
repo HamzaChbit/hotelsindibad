@@ -84,11 +84,24 @@ const hotelRoom = {
     defineField({
       name: 'specialNote',
       title: 'Special Note',
-      type: 'text',
+      type: 'object',
+      fields: [
+        {
+          name: 'en',
+          title: 'English',
+          type: 'text',
+          validation: Rule => Rule.required(),
+        },
+        {
+          name: 'fr',
+          title: 'French',
+          type: 'text',
+          validation: Rule => Rule.required(),
+        },
+      ],
       validation: Rule => Rule.required(),
-      initialValue:
-        'Check-in time is 12:00 PM, checkout time is 11:59 AM. If you leave behind any items, please contact the receptionist.',
     }),
+    
     defineField({
       name: 'dimension',
       title: 'Dimension',

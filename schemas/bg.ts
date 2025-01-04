@@ -3,7 +3,7 @@ import { defineField } from 'sanity';
 
 const hotelToom = {
   name: 'hotelToom',
-  title: 'Hotel Toom',
+  title: 'Backround',
   type: 'document',
   fields: [
     defineField({

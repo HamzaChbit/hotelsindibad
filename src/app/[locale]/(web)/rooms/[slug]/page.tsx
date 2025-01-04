@@ -12,7 +12,7 @@ import { TbAirConditioning } from "react-icons/tb";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { IoTvSharp } from "react-icons/io5";
-import { useUser } from "@clerk/nextjs";
+
 import { getRoom } from "@/libs/apis";
 import BookRoomCta from "@/components/BookRoomCta/BookRoomCta";
 import HotelPhotoGallery from "@/components/HotelPhotoGallery/HotelPhotoGallery";
@@ -23,11 +23,10 @@ const RoomDetails = (props: { params: { slug: string } }) => {
     params: { slug },
   } = props;
 
-  const { user } = useUser();
+  
   const locale = useLocale()
   const t = useTranslations("pageRoom")
-  const userId = user?.fullName;
-  const email = user?.emailAddresses[0]?.emailAddress;
+
 
   const fetchRoom = async (url: string) => getRoom(slug);
   const { data: room, error, isLoading } = useSWR(`/api/room/${slug}`, fetchRoom);
@@ -35,6 +34,7 @@ const RoomDetails = (props: { params: { slug: string } }) => {
   const [checkinDate, setCheckinDate] = useState<Date | null>(null);
   const [checkoutDate, setCheckoutDate] = useState<Date | null>(null);
   const [telephone, setTelephone] = useState("");
+  const [email, setEmail] = useState("");
   const [adults, setAdults] = useState(1);
   const [noOfChildren, setNoOfChildren] = useState(0);
 
@@ -75,13 +75,13 @@ const RoomDetails = (props: { params: { slug: string } }) => {
         telephone,
         hotelRoomSlug,
         email,
-        user: userId,
-        userId: user?.id,
+      
       });
       toast.success("Booking successful");
       setCheckinDate(null);
       setCheckoutDate(null);
       setTelephone("");
+      setEmail("");
       setAdults(1);
       setNoOfChildren(0);
     } catch (error) {
@@ -102,8 +102,7 @@ const RoomDetails = (props: { params: { slug: string } }) => {
       <HotelPhotoGallery photos={room.images} />
       <div className="container mx-auto mt-20">
         <div className="md:grid md:grid-cols-12 gap-10 px-3">
-          <div className="md:col-span-8 md:w-full"    data-aos="fade-up"
- data-aos-duration="1000">
+          <div className="md:col-span-8 md:w-full"  >
             <div>
               <h2 className="font-bold text-left text-lg md:text-2xl text-tertiary-dark">
                 {locale == "en" ? room.name.en : room.name.fr} 
@@ -192,12 +191,12 @@ const RoomDetails = (props: { params: { slug: string } }) => {
               </div>
             </div>
           </div>
-          <div className="md:col-span-4 rounded-xl shadow-lg dark:shadow-lg dark:shadow-white sticky top-10 h-fit overflow-auto" data-aos="fade-up" data-aos-duration="1000"
+          <div className="md:col-span-4 rounded-xl shadow-lg dark:shadow-lg dark:shadow-white sticky top-10 h-fit overflow-auto" 
     >
             <BookRoomCta
               discount={room.discount}
               price={room.price}
-              specialNote={room.specialNote}
+              specialNote={locale === "en" ? room.specialNote.en : room.specialNote.fr}
               checkinDate={checkinDate}
               setCheckinDate={setCheckinDate}
               checkoutDate={checkoutDate}
@@ -209,6 +208,8 @@ const RoomDetails = (props: { params: { slug: string } }) => {
               setNoOfChildren={setNoOfChildren}
               isBooked={room.isBooked}
               handleBookNowClick={handleBookNowClick}
+             email={ email}
+              setEmail={ setEmail}
               telephone={telephone}
               setTelephone={setTelephone}
             />

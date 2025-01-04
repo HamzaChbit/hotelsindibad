@@ -57,25 +57,24 @@ export const createBooking = async ({
   discount,
   hotelRoom,
   telephone,
+  email,
   numberOfDays,
   totalPrice,
-  user,
-  userId,
-  email,
+
 }: CreateBookingDto) => {
   const mutation = {
     mutations: [
       {
         create: {
           _type: 'booking',
-          user,
-          userId,
-          email,
+       
+         
           hotelRoom: { _type: 'reference', _ref: hotelRoom },
           checkinDate,
           checkoutDate,
           numberOfDays,
           telephone,
+          email,
           adults,
           children,
           totalPrice,
@@ -117,15 +116,5 @@ export const updateHotelRoom = async (hotelRoomId: string) => {
   return data;
 };
 
-export async function getUserBookings(userId: string) {
-  const result = await sanityClient.fetch<Booking[]>(
-    queries.getUserBookingsQuery,
-    {
-      userId,
-    },
-    { cache: 'no-cache' }
-  );
 
-  return result;
-}
 

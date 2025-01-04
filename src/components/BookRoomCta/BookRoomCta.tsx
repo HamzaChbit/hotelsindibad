@@ -9,8 +9,7 @@ import { PhoneInput } from 'react-international-phone';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-international-phone/style.css';
-import Link from 'next/link';
-import { useUser } from '@clerk/nextjs';
+
 import { useLocale, useTranslations } from 'next-intl';
 type Props ={
   price: number;
@@ -28,6 +27,9 @@ type Props ={
   telephone: string;
   isBooked:boolean;
   
+  email: string;
+  setEmail: Dispatch<SetStateAction<string>>;
+ 
   setTelephone: Dispatch<SetStateAction<string>>;
   handleBookNowClick: () => void;
 }
@@ -35,8 +37,7 @@ type Props ={
 
 const BookRoomCta:FC<Props> = props => {
   
-  const { user } = useUser();
-  const userId = user;
+
 const {price,discount ,specialNote,
   checkinDate,
   setCheckinDate,
@@ -51,6 +52,9 @@ const {price,discount ,specialNote,
   telephone, // Add telephone prop
   setTelephone, 
   handleBookNowClick,
+
+  email,
+  setEmail,
 
 
 }=props;
@@ -67,29 +71,42 @@ const {price,discount ,specialNote,
  
   const locale = useLocale()
   const t = useTranslations('BookNow');
+  const d = useTranslations('FeaturedRoom')
   return (
    <div className='px-7 py-6'>
-   <h3 >
-   <span
-          className={`${discount ? 'text-gray-400' : ''} font-bold text-xl `}
-        >
-          $ {price}
-        </span>
-    {discount > 0 ? (
-          <span className='font-bold text-xl'>
-            {' '}
-            | discount {discount}%. Now{' '}
-            <span className='text-tertiary-dark'>$ {discountPrice}</span>
-          </span>
-        ) : (
-          ''
-        )}
-   </h3>
+  <h3>
+  {discount > 0 ? (
+    <span className='font-bold text-xl'>
+      $ {price} {' '}| Discount {discount}%. Now{' '}
+      <span className='text-tertiary-dark'>$ {discountPrice}</span>
+    </span>
+  ) : (
+    <span className={`${discount ? 'text-gray-400' : ''} font-bold text-xl`}>
+     {d('from')} $ {price}
+    </span>
+  )}
+</h3>
+
    <div className='w-full border-b-2 border-b-secondary my-2' />
    <h4 className='my-8'>{specialNote}</h4>
+   <div  className='flex mt-4 flex-col' > 
+    <label htmlFor="email" className='block text-sm font-medium text-gray-900 dark:text-dark-400'>
+           Email
+            </label>
+            <input type="email" id='email' value={email}   required onChange={e => setEmail(e.target.value)}
+           
+           
+            className='w-full border border-gray-300 rounded-lg p-2.5 
+            
+            '
+            />
 
-   <div className='flex'>
-    <div className="w-1/2 pr-2" >
+      
+      
+      </div>  
+ <div className='flex'>
+ 
+       <div className="w-1/2 pr-2" >
       <label htmlFor="check-in-date" className="block text-sm font-medium text-gray-900 dark:text-gray-400">
       {t("checkIn")}
       </label>
@@ -175,6 +192,11 @@ const {price,discount ,specialNote,
   </div>
 
 
+ 
+ 
+
+ 
+
         {calcNoOfDays() > 0 ?( <p className='mt-3'>
 
           {t("total")}: $ {calcNoOfDays() * discountPrice}
@@ -182,23 +204,13 @@ const {price,discount ,specialNote,
       : ( <></>)
       }
 
-{
-  userId?    <button
+   <button
         disabled={isBooked}
         onClick={handleBookNowClick}
         className='btn-primary w-full mt-6 disabled:bg-gray-500 disabled:cursor-not-allowed'
       >
 {t("book")}
-      </button>  : 
-      
-      <button
-       
-      
-        className='btn-primary w-full mt-6 disabled:bg-gray-500 disabled:cursor-not-allowed'
-      >
-   <Link  href={`/${locale}/sign-up`} >{t("singUp")}</Link> 
-      </button>
-}
+      </button>  
   
 
 
